@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Exercicio</title>
+
+</head>
+<body>
+    
+    <h1>Lista de exercicios</h1>
+
+        <script>
+
+            /*
+            
+                Faça um programa que, dado um conjunto de N números, determine o menor valor, o maior valor e a soma dos valores.
+
+            */
+
+            let n1 = parseFloat(prompt("Digite um número"))
+            let n2 = parseFloat(prompt("Digite outro número"))
+
+            let menorNumero = 0
+            let maiorNumero = 0
+            let soma = 0
+
+            while(n1 >= 0 && n2 >= 0){
+                if(n1 > n2){
+                        maiorNumero = n1
+                        menorNumero = n2
+                }else if(n2 > n1){
+                        maiorNumero = n2
+                        menorNumero = n1
+                }
+                break
+            }
+
+            soma = (n1+n2)
+
+            console.log("Maior número é: "+maiorNumero)
+            console.log("Menor número é: "+menorNumero)
+            console.log("Soma dos valores: "+soma)
+
+        </script>
+
+</body>
+</html>

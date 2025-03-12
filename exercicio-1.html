@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Exercicio</title>
+
+</head>
+<body>
+    
+    <h1>Lista de exercicios</h1>
+
+        <script>
+
+            /*
+            
+            Faça um programa que peça uma nota, entre zero e dez. Mostre uma mensagem caso o valor seja inválido e continue pedindo até que o usuário informe um valor válido. 
+
+            */
+
+            let nota = parseFloat(prompt("Digite uma nota entre 0-10"))
+            
+            while(nota < 0 || nota > 10){
+                parseFloat(prompt("Número inválido, digite novamente"))
+            }
+            document.write("Número válido: "+ nota +"<br>")
+            document.write("FIM DO CÓDIGO")
+
+        </script>
+
+</body>
+</html>
