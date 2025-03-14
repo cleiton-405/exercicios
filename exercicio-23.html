@@ -17,11 +17,26 @@
             
             /*
             
-            
+            Crie um programa que exiba em uma tabela e destaque todos os números primos que estão entre 0 e 200.
 
             */
 
-            
+            let primosEncontrados = 0
+
+            for (dividendo = 2; dividendo <= 200; dividendo++) {
+                let ehPrimo = true
+            for (divisor = 2; divisor < dividendo ; divisor++) {
+                if (dividendo % divisor == 0) {
+                    ehPrimo = false
+                break
+                }
+            }
+            if (Boolean(ehPrimo)) { 
+                primosEncontrados++;
+            }
+            }
+
+            document.write("Números primos encontrados: "+primosEncontrados)
 
         </script>
 
