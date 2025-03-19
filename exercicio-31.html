@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Exercicio</title>
+
+</head>
+<body>
+    
+    <h1>Lista de exercicios</h1>
+
+        <script>
+            
+            /*
+            
+            Crie um programa que receba a temperatura em graus Celsius e classifique-a da seguinte forma:
+
+            Menos de 0°C: "Congelante"
+            De 0°C a 10°C: "Frio"
+            De 11°C a 20°C: "Agradável"
+            De 21°C a 30°C: "Quente"
+            Acima de 30°C: "Muito quente"
+
+            */
+
+            while(true){
+                let temp = parseInt(prompt(" Digite a temperatura (0 para sair do programa): "))
+
+                if(temp === 0){
+                    alert(" !!! Saiu do programa !!! ")
+                    break
+                }
+
+                if(isNaN(temp)){
+                    alert(" !!! DIGITE APENAS NÚMEROS !!! ")
+                    continue
+                }
+
+                switch(true){
+                    case (temp < 0):
+                        alert("Congelante")
+                    break
+                    case (temp >= 0 && temp <= 10):
+                        alert("Frio")
+                    break    
+                    case (temp >= 11  && temp <= 20):
+                        alert("Agradável")
+                    break
+                    case (temp >= 21 && temp <= 30):
+                        alert("Quente")
+                    break
+                    case (temp > 30):
+                        alert("Muito quente")
+                    break        
+                }
+            }
+
+        </script>
+
+</body>
+</html>

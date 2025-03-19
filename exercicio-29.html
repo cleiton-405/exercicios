@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Exercicio</title>
+
+</head>
+<body>
+    
+    <h1>Lista de exercicios</h1>
+
+        <script>
+            
+            /*
+            
+            Crie um programa que converta um valor informado em reais (R$) para dólares, euros e libras esterlinas. As taxas de conversão são as seguintes:
+
+            1 R$ = 0.20 USD
+            1 R$ = 0.18 EUR
+            1 R$ = 0.16 GBP
+
+            */
+
+            alert(" --- Conversor de moedas ---")
+            alert(" 1- USD")
+            alert(" 2- EUR")
+            alert(" 3- GBP")
+            alert(" 0- Sair")
+
+            while(true){
+
+                let valor = parseFloat(prompt("Digite um valor (0 para sair): "))
+
+                if(valor === 0){
+                    alert(" !!! Você saiu do programa !!! ")
+                    break
+                }
+
+                if(isNaN(valor) || valor < 0){
+                    alert(" !!! Digite um valor válido !!! ")
+                    continue 
+                }
+
+                let moeda = parseInt(prompt("Qual moeda você deseja fazer a conversão: "))
+
+                if(moeda <= 0 || moeda > 4){
+                    alert(" !!! Escolha entre 1-3 para conversão de moedas !!! ")
+                    continue
+                }
+
+                switch (moeda){
+                    case 1:
+                        usd = valor * 0.20
+                        alert("Dólar: "+usd)
+                    break
+                    case 2:
+                        eur = valor * 0.18
+                        alert("Euro: "+eur)
+                    break
+                    case 3:
+                        gbp = valor * 0.16
+                        alert("Libras esterlinas: "+gbp)
+                    break
+                }
+
+            }
+
+        </script>
+
+</body>
+</html>
