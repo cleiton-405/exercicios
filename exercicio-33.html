@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Exercicio</title>
+
+</head>
+<body>
+    
+    <h1>Lista de exercicios</h1>
+
+        <script>
+            
+            /*
+            
+            Crie um objeto chamado carro com as propriedades:
+
+            marca (string)
+            modelo (string)
+            ano (número)
+
+            Acesse e imprima essas propriedades separadamente usando a notação de ponto.
+
+            */
+
+            let marca = prompt("Digite a marca do carro: ")
+            let modelo = prompt("Digite o modelo do carro: ")
+            let ano = parseInt(prompt("Digite o ano do carro: "))
+
+            const carro = {marca, modelo, ano}
+
+            for(let prop in carro){
+                console.log(carro[prop])
+            }
+
+        </script>
+
+</body>
+</html>
