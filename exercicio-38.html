@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Exercicio</title>
+
+</head>
+<body>
+    
+    <h1>Lista de exercicios</h1>
+
+        <script>
+            
+            /*
+            
+            Crie um array de números e encontre o maior e o menor número utilizando Math.max() e Math.min().
+            
+            */
+
+            const numeros = []
+
+            for(let i = 0; i < 5; i++){
+                let n1 = parseInt(prompt("Digite um número: "))
+
+                numeros[i] = n1
+            }
+
+            console.log("Números da array")
+            console.log(numeros)
+            
+            let max = Math.max(...numeros)
+            console.log("Maior número:")
+            console.log(max)
+            //Usado método math.max() para identificar o maior número em uma array
+            //Operador spread (...) para verificar dentro de uma array
+
+            let min = Math.min(...numeros)
+            console.log("Menor número:")
+            console.log(min)
+            //Usado método math.min() para identificar o menor número em uma array
+            //Operador spread (...) para verificar dentro de uma array
+
+        </script>
+
+</body>
+</html>

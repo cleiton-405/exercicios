@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Exercicio</title>
+
+</head>
+<body>
+    
+    <h1>Lista de exercicios</h1>
+
+        <script>
+            
+            /*
+            
+            Criar um objeto de aluno com nome e notas e calcular a média das notas.
+            
+            */
+
+            let nome = prompt("Digite seu nome: ")
+            let nota1 = parseFloat(prompt("Digite sua nota 1: "))
+            let nota2 = parseFloat(prompt("Digite sua nota 2: "))
+
+            const aluno = {nome, nota1, nota2}
+
+            media = 0
+
+            media = (aluno.nota1 + aluno.nota2) / 2
+
+            console.log(`O ${aluno.nome} tirou ${aluno.nota1} e ${aluno.nota2}. Teve uma media de `+media+".")
+
+        </script>
+
+</body>
+</html>
