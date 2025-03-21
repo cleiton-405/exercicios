@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Exercicio</title>
+
+</head>
+<body>
+    
+    <h1>Lista de exercicios</h1>
+
+        <script>
+            
+            /*
+            
+            Escreva uma função que conte o número de vogais em uma string fornecida.
+            
+            */
+
+            let string = prompt("Digite uma palavra: ")
+
+            const vogais = "aeiouAEIOU"
+            let contador = 0
+
+            for(let i = 0; i < string.length; i++){
+                if(vogais.includes(string[i])){
+                    contador++
+                }
+            }
+
+            console.log("Quantidade de vogais: "+contador)
+
+        </script>
+
+</body>
+</html>
