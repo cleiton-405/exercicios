@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Ex01/style.css">
 
     <title>Exercicio</title>
 
@@ -13,58 +13,13 @@
     
     <h1>Lista de exercicios</h1>
 
-        <script>
-            
-            /*
-            
-                Faça uma função que recebe um array de qualquer tamanho e ordene seus elementos na ordem crescente. Faça sua função na mão, não invoque nenhum método de sorting. Dica: pesquise sobre bubble sort.
+        <!--
+    
+        Faça uma função que recebe um array de qualquer tamanho e ordene seus elementos na ordem crescente. Faça sua função na mão, não invoque nenhum método de sorting. Dica: pesquise sobre bubble sort.
 
-            */
+        -->
 
-            let numeros = []
-            let n1 = 0
-            let n2 = 0
-            let n3 = 0
-
-            for(let i = 0; i < 3; i++){
-                let num = parseInt(prompt("Digite um número: "))
-
-                numeros[i] = num
-            }
-
-            if(numeros[0] > numeros[1] && numeros[0] > numeros[2]){
-                n3 = numeros[0]
-                    if(numeros[1] > numeros[2]){
-                        n2 = numeros[1]
-                        n1 = numeros[2]
-                    }else{
-                        n2 = numeros[2]
-                        n1 = numeros[1]
-                    }
-            }else if(numeros[0] < numeros[1] && numeros[0] < numeros[2]){
-                n1 = numeros[0]
-                    if(numeros[1] < numeros[2]){
-                        n2 = numeros[1]
-                        n3 = numeros[2]
-                    }else{
-                        n2 = numeros[2]
-                        n3 = numeros[1]
-                    }
-            }else{
-                n2 = numeros[0]
-                    if(numeros[1] > numeros[2]){
-                        n3 = numeros[1]
-                        n1 = numeros[2]
-                    }else{
-                        n3 = numeros[2]
-                        n1 = numeros[1]
-                    }
-            }
-
-            console.log("Números digitados: "+numeros)
-            console.log("Números ordenados: "+n1+" - "+n2+" - "+n3)  
-
-        </script>
+        <script src="exercicio-12.js"></script>
 
 </body>
 </html>

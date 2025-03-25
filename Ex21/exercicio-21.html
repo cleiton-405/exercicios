@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Ex01/style.css">
 
     <title>Exercicio</title>
 
@@ -13,11 +13,9 @@
     
     <h1>Lista de exercicios</h1>
 
-        <script>
-            
-            /*
-            
-            Faça um script que lê as duas notas parciais obtidas por um aluno numa disciplina ao longo de um semestre, e calcule a sua média. A atribuição de conceitos obedece à tabela abaixo:
+        <!-- 
+    
+        Faça um script que lê as duas notas parciais obtidas por um aluno numa disciplina ao longo de um semestre, e calcule a sua média. A atribuição de conceitos obedece à tabela abaixo:
 
             Média de Aproveitamento  Conceito
             Entre 9.0 e 10.0 - A
@@ -26,60 +24,11 @@
             Entre 4.0 e 6.0  - D
             Entre 4.0 e zero - E
 
-            O algoritmo deve mostrar numa janela de alert as notas, a média, o conceito correspondente      e a mensagem “APROVADO” se o conceito for A, B ou C ou “REPROVADO” se o conceito for D ou       E.
+        O algoritmo deve mostrar numa janela de alert as notas, a média, o conceito correspondente e a mensagem “APROVADO” se o conceito for A, B ou C ou “REPROVADO” se o conceito for D ou E.
 
-            */
+        -->
 
-            let nota1 = parseFloat(prompt("Digite a primeira nota: "))
-            let nota2 = parseFloat(prompt("Digite a segunda nota: "))
-
-            let media = 0
-
-            media = (nota1 + nota2) / 2
-
-            if(media >= 9 && media <= 10){
-                
-                console.log("Nota 1: "+nota1)
-                console.log("Nota 2: "+nota2)
-                console.log("Sua média: "+media)
-                console.log("Conceito: "+ "A")
-                console.log(" !!! APROVADO !!! ")
-
-            }else if(media >= 7.5 && media < 9){
-                
-                console.log("Nota 1: "+nota1)
-                console.log("Nota 2: "+nota2)
-                console.log("Sua média: "+media)
-                console.log("Conceito: "+ "B")
-                console.log(" !!! APROVADO !!! ")
-
-            }else if(media >= 6 && media < 7.5){
-                
-                console.log("Nota 1: "+nota1)
-                console.log("Nota 2: "+nota2)
-                console.log("Sua média: "+media)
-                console.log("Conceito: "+ "C")
-                console.log(" !!! APROVADO !!! ")
-
-            }else if(media >= 4 && media < 6){
-                
-                console.log("Nota 1: "+nota1)
-                console.log("Nota 2: "+nota2)
-                console.log("Sua média: "+media)
-                console.log("Conceito: "+ "D")
-                console.log(" !!! REPROVADO !!! ")
-
-            }else if(media >= 0 || media < 0 && media < 4){
-                
-                console.log("Nota 1: "+nota1)
-                console.log("Nota 2: "+nota2)
-                console.log("Sua média: "+media)
-                console.log("Conceito: "+ "E")
-                console.log(" !!! REPROVADO !!! ")
-
-            }
-
-        </script>
+        <script src="exercicio-21.js"></script>
 
 </body>
 </html>

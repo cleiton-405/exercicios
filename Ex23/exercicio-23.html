@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Ex01/style.css">
 
     <title>Exercicio</title>
 
@@ -13,32 +13,13 @@
     
     <h1>Lista de exercicios</h1>
 
-        <script>
-            
-            /*
-            
-            Crie um programa que exiba em uma tabela e destaque todos os números primos que estão entre 0 e 200.
+        <!-- 
 
-            */
+        Crie um programa que exiba em uma tabela e destaque todos os números primos que estão entre 0 e 200.
+    
+        -->
 
-            let primosEncontrados = 0
-
-            for (dividendo = 2; dividendo <= 200; dividendo++) {
-                let ehPrimo = true
-            for (divisor = 2; divisor < dividendo ; divisor++) {
-                if (dividendo % divisor == 0) {
-                    ehPrimo = false
-                break
-                }
-            }
-            if (Boolean(ehPrimo)) { 
-                primosEncontrados++;
-            }
-            }
-
-            document.write("Números primos encontrados: "+primosEncontrados)
-
-        </script>
+        <script src="exercicio-23.js"></script>
 
 </body>
 </html>

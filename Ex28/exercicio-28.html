@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Ex01/style.css">
 
     <title>Exercicio</title>
 
@@ -13,45 +13,13 @@
     
     <h1>Lista de exercicios</h1>
 
-        <script>
-            
-            /*
-            
-            Crie um programa que receba a idade de uma pessoa e classifique-a como "Criança", "Adolescente", "Adulto" ou "Idoso" utilizando o switch case.
+        <!--
+    
+        Crie um programa que receba a idade de uma pessoa e classifique-a como "Criança", "Adolescente", "Adulto" ou "Idoso" utilizando o switch case.
 
-            */
+        -->
 
-            while(true){
-
-            let idade = parseInt(prompt("Digite sua idade (0 para sair): "))
-
-            if(idade === 0){
-                alert("Você saiu do programa")
-                break
-            }
-
-            if(idade < 1 || idade === ""){
-                alert(" !!! DIGITE UMA IDADE !!! ")
-                continue
-            }
-
-                switch(true){
-                    case (idade > 0 && idade < 10):
-                        alert("Você é uma criança")
-                    break
-                    case (idade >= 10 && idade < 18):
-                        alert("Você é um adolescente")
-                    break
-                    case (idade >= 18 && idade < 60):
-                        alert("Você é um adulto")
-                    break
-                    case (idade >= 60):
-                        alert("Você é um idoso")
-                    break        
-                }
-            }
-
-        </script>
+        <script src="exercicio-28.js"></script>
 
 </body>
 </html>
