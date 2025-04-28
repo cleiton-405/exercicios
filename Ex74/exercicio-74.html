@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="exercicio-74.css">
+
+    <title>Exercicio 74</title>
+
+</head>
+<body>
+    
+    <h1>Exercicio 74</h1>
+
+        <!--
+            Crie uma função que receba um array de produtos (cada produto com nome e preço) e retorne o valor total da compra.
+
+            Crie uma função que adicione um novo produto a um array carrinho.
+
+            Crie uma função que aplique um desconto (em %) sobre o valor total da compra.
+
+            Crie uma função que remova um item do carrinho baseado no nome do produto.
+
+            Mostre todos os produtos do carrinho com nome, preço e total da compra.
+        -->
+
+        <label>Informe o nome do produto:
+            <input type="text" id="nomeProduto">
+        </label>
+
+        <br><br>
+
+        <label>Informe o preço do produto:
+            <input type="number" id="precoProduto">
+        </label>
+
+        <br><br>
+
+        <button onclick="adicionarProdutos()">Adicionar produtos</button>
+
+        <button onclick="calcularTotalProdutos()">Somar os produtos</button>
+
+        <button onclick="mostrarProdutos()">Mostrar produtos</button>
+
+        <output id="output"></output>
+
+        <script src="exercicio-74.js"></script>
+
+</body>
+</html>
