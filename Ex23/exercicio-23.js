@@ -1,16 +1,20 @@
-        let primosEncontrados = 0
+const output = document.getElementById("output")
 
-            for (dividendo = 2; dividendo <= 200; dividendo++) {
-                let ehPrimo = true
-            for (divisor = 2; divisor < dividendo ; divisor++) {
-                if (dividendo % divisor == 0) {
-                    ehPrimo = false
-                break
-                }
-            }
-            if (Boolean(ehPrimo)) { 
-                primosEncontrados++;
-            }
-            }
+function numerosPrimos(){
+    let primosEncontrados = 0
 
-            console.log("Números primos encontrados: "+primosEncontrados)
+    for(dividendo = 2; dividendo <= 200; dividendo++){
+        let ehPrimo = true
+    for(divisor = 2; divisor < dividendo; divisor++){
+        if(dividendo % divisor == 0){
+                ehPrimo = false
+            break
+            }
+        }
+        if(Boolean(ehPrimo)){ 
+            primosEncontrados++;
+        }
+    }
+
+    output.innerHTML = `Números primos encontrados: ${primosEncontrados}`
+}

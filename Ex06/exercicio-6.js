@@ -1,33 +1,42 @@
-let i = 0 
-let soma = 0
-let media = 0
+const output = document.getElementById("output")
+const num = document.getElementById("num")
+const arraySoma = []
 
-    for(i = 0;i <= 5; ++i) {
-        let num = parseInt(prompt("Digite um número: "))
+function soma(){
+    const numValue = Number(num.value)
 
-        num = num + 1
-        soma = num + num + num + num + num
-        media = soma / 2
-
+    if(arraySoma.length < 5){
+        arraySoma.push(numValue)
+        output.innerHTML = ` !!! Número adicionado: ${numValue} !!! `
     }
 
-    console.log("A soma dos números é: "+soma)
-    console.log("A média dos números é: "+media)
-
-    //Outra forma de realizar o exercicio
-
-    /*
-
-    let i = 0 
-    let maior = 1
-            
-    for(i = 1;i <= 5;++i){
-        let num = parseInt(prompt("Digite um número: "))
-            if(num > maior){
-                maior = num
-            }
-    }
+    if(arraySoma.length === 5) {
+        let soma = 0
     
-    console.log("O maior número é: ", maior)
+        for(let i = 0; i < arraySoma.length; i++){
+            soma += arraySoma[i]
+        }
 
-    */
+        // ou arraySoma.reduce((acc, val) => acc + val, 0)
+
+        output.innerHTML = `Soma total: ${soma}`
+    }
+}
+
+function media(){
+    let soma = 0
+
+    for(let i = 0; i < arraySoma.length; i++){
+        soma += arraySoma[i]
+    }
+
+    // ou arraySoma.reduce((acc, val) => acc + val, 0)
+
+    const media = soma / arraySoma.length
+
+    output.innerHTML = `Média: ${media}`
+}
+
+// arraySoma.reduce((acc, val) => acc + val, 0)
+
+// É uma forma moderna e eficiente de somar todos os valores de um array em JavaScript.

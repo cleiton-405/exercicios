@@ -1,7 +1,11 @@
-let num = 0
+const output = document.getElementById("output")
 
-    for(num = 1;num <= 30; num++){
+function impares(){
+    let num = 0
+
+    for(num = 0;num <= 30; num++){
         if(num % 2 != 0){
-            console.log("Números ímpares: "+num)
+            output.innerHTML += `${num}<br>`
         }
     }
+}

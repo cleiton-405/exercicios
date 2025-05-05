@@ -1,83 +1,70 @@
-function validarNome(nome){
-    return nome.length > 3
-}
+const nome = document.getElementById("nome")
+const idade = document.getElementById("idade")
+const salario = document.getElementById("salario")
+const sexo = document.getElementById("sexo")
+const estadoCivil = document.getElementById("estadoCivil")
+const output = document.getElementById("output")
 
-function validarIdade(idade){
-    return idade >= 0 && idade <= 150
-}
-
-function validarSalario(salario){
-    return salario > 0
-}
-
-function validarSexo(sexo){
-    return sexo === 'f' || sexo === 'm'
-}
-
-function validarEstadoCivil(estadoCivil) {
-    return estadoCivil === 's' || estadoCivil === 'c' || estadoCivil === 'v' || estadoCivil === 'd'
+function validar(){
+    lerDados()
 }
 
 function lerDados(){
-    let nome
-    let idade
-    let salario
-    let sexo
-    let estadoCivil
+    const nomeValue = nome.value
+    const idadeValue = idade.value
+    const salarioValue = salario.value
+    const sexoValue = sexo.value.toLowerCase()
+    const estadoCivilValue = estadoCivil.value.toLowerCase()
 
-    while(true){
-        nome = prompt("Digite seu nome (maior que 3 caracteres):")
-        if (validarNome(nome)){
-            break
-        }else{
-            alert("Nome inválido. O nome deve ter mais que 3 caracteres.")
+        try{
+            if(nomeValue.length < 3){
+                alert(" !!! Nome inválido, digite um nome com mais de 3 caracteres !!! ")
+            }else{
+                alert(" !!! Tudo certo !!! ")
+            }
+        }catch(error){
+            throw Error ("Erro ao validar o nome: " + error.message)
         }
-    }
 
-    while(true){
-        idade = parseInt(prompt("Digite sua idade (entre 0 e 150):"))
-        if (validarIdade(idade)){
-            break
-        }else{
-            alert("Idade inválida. A idade deve estar entre 0 e 150.")
+        try{
+            if(idadeValue < 0 || idadeValue > 150){
+                alert(" !!! Idade inválida, digite uma idade entre 0-150 !!!")
+            }else{
+                alert(" !!! Tudo certo !!! ")
+            }
+        }catch(error){
+            throw Error ("Erro ao validar a idade: " + error.message)
         }
-    }
 
-    while(true){
-        salario = parseFloat(prompt("Digite seu salário (maior que 0):"))
-        if (validarSalario(salario)){
-            break
-        }else{
-            alert("Salário inválido. O salário deve ser maior que 0.")
+        try{
+            if(salarioValue < 0){
+                alert(" !!! Salário inválido, digite um salário maior que 0 !!!")
+            }else{
+                alert(" !!! Tudo certo !!! ")
+            }
+        }catch(error){
+            throw Error ("Erro ao validar o salário: " + error.message)
         }
-    }
 
-    while(true){
-        sexo = prompt("Digite seu sexo ('f' para feminino ou 'm' para masculino):").toLowerCase()
-        if(validarSexo(sexo)){
-            break
-        }else{
-            alert("Sexo inválido. Use 'f' para feminino ou 'm' para masculino.")
+        try{
+            if(sexoValue !== 'f' && sexoValue !== 'm'){
+                alert(" !!! Sexo inválido, digite sexo usando f ou m !!!")
+            }else{
+                alert(" !!! Tudo certo !!! ")
+            }
+        }catch(error){
+            throw Error ("Erro ao validar o sexo: " + error.message)
         }
-    }
 
-    while(true){
-        estadoCivil = prompt("Digite seu estado civil ('s' para solteiro, 'c' para casado, 'v' para viúvo, 'd' para divorciado):").toLowerCase()
-        if(validarEstadoCivil(estadoCivil)){
-            break
-        }else{
-            alert("Estado civil inválido. Use 's' para solteiro, 'c' para casado, 'v' para viúvo ou 'd' para divorciado.")
+        try{
+            if(estadoCivilValue !== 's' && estadoCivilValue !== 'c' && estadoCivilValue !== 'v' && estadoCivilValue !== 'd'){
+                alert(" !!! Estado Civil inválido, digite um estado civil com s, c, v, d !!!")
+            }else{
+                alert(" !!! Tudo certo !!! ")
+            }
+        }catch(error){
+            throw Error ("Erro ao validar o estado civil: " + error.message)
         }
-    }
 
-    alert("\nDados Validados:" +
-        "\nNome: " + nome +
-        "\nIdade: " + idade +
-        "\nSalário: " + salario +
-        "\nSexo: " + sexo +
-        "\nEstado Civil: " + estadoCivil)
+        output.innerHTML = `Nome: ${nomeValue}<br> Idade: ${idadeValue}<br> Salário: R$ ${salarioValue}<br> Sexo: ${sexoValue}<br> Estado Civil: ${estadoCivilValue}`
 }
-
-// Usando o \n para pular uma linha
-
-lerDados()

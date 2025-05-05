@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/Ex01/style.css">
+    <link rel="stylesheet" href="exercicio-25.css">
 
     <title>Exercicio</title>
 
 </head>
 <body>
     
-    <h1>Lista de exercicios</h1>
+    <h1>Cardápio Lanchonete</h1>
 
         <!-- 
     
@@ -30,6 +30,72 @@
             Faça um programa que leia o código dos itens pedidos e as quantidades desejadas. Calcule e mostre o valor a ser pago por item (preço * quantidade) e o total geral do pedido. Considere que o cliente deve informar quando o pedido deve ser encerrado.
 
         -->
+
+        <div class="tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Especificação</th>
+                        <th>Código</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cachorro Quente</td>
+                        <td>100</td>
+                        <td>R$ 1,20</td>
+                    </tr>
+                    <tr>
+                        <td>Bauru Simples</td>
+                        <td>101</td>
+                        <td>R$ 1,30</td>
+                    </tr>
+                    <tr>
+                        <td>Bauru com ovo</td>
+                        <td>102</td>
+                        <td>R$ 1,50</td>
+                    </tr>
+                    <tr>
+                        <td>Hambúrguer</td>
+                        <td>103</td>
+                        <td>R$ 1,20</td>
+                    </tr>
+                    <tr>
+                        <td>Cheeseburguer</td>
+                        <td>104</td>
+                        <td>R$ 1,30</td>
+                    </tr>
+                    <tr>
+                        <td>Refrigerante</td>
+                        <td>105</td>
+                        <td>R$ 1,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br><br>
+
+        <label>
+            <input type="number" id="codigo" placeholder="Digite o código do produto...">
+        </label>
+
+        <br><br>
+
+        <label>
+            <input type="number" id="qtd" placeholder="Digite a quantidade do produto...">
+        </label>
+
+        <br><br>
+
+        <button onclick="adicionarProduto()">Adicionar</button>
+
+        <button onclick="totalPedidos()">Total</button>
+
+        <br><br>
+
+        <output id="output"></output>
 
         <script src="exercicio-25.js"></script>
 

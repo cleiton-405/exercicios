@@ -1,23 +1,28 @@
-let n1 = parseFloat(prompt("Digite um número"))
-let n2 = parseFloat(prompt("Digite outro número"))
+const output = document.getElementById("output")
+const n1 = document.getElementById("n1")
+const n2 = document.getElementById("n2")
 
-    let menorNumero = 0
-    let maiorNumero = 0
-    let soma = 0
+function maiorNumeroEmenorNumero(){
 
-    while(n1 >= 0 && n2 >= 0){
-        if(n1 > n2){
-            maiorNumero = n1
-            menorNumero = n2
-        }else if(n2 > n1){
-            maiorNumero = n2
-            menorNumero = n1
+    const n1Value = Number(n1.value)
+    const n2Value = Number(n2.value)
+
+    if(n1Value === 0 && n2Value === 0){
+        output.innerHTML = `!!! Ambos os números são zeros !!!`
+    }else if(n1Value >= 0 && n2Value >= 0){
+        if(n1Value > n2Value){
+            output.innerHTML = `Maior número: ${n1Value}<br>Menor número: ${n2Value}`
+        }else if(n2Value > n1Value){
+            output.innerHTML = `Maior número: ${n2Value}<br>Menor número: ${n1Value}`
+        }else{
+            output.innerHTML = `Os dois números são iguais: ${n1Value}`
         }
-        break
     }
+}
 
-    soma = (n1+n2)
-
-    console.log("Maior número é: "+maiorNumero)
-    console.log("Menor número é: "+menorNumero)
-    console.log("Soma dos valores: "+soma)
+function soma(){
+    const n1Value = Number(n1.value)
+    const n2Value = Number(n2.value)
+    
+    output.innerHTML = `Soma dos números: ${n1Value+n2Value}`
+}

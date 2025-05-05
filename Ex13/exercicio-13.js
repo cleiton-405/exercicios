@@ -1,9 +1,24 @@
-let titulo = prompt("Digite o título: ")
-    let autor = prompt("Digite o autor: ")
-    let numeroDePaginas = parseInt(prompt("Digite o número de páginas do livro: "))
+const output = document.getElementById("output")
+const titulo = document.getElementById("titulo")
+const autor = document.getElementById("autor")
+const numpaginas = document.getElementById("numpaginas")
 
-    const livro = {titulo, autor, numeroDePaginas}
+const livro = {}
 
-    console.log("Informações do livro")
-    console.log("--------------------")
-    console.log(livro)
+function mostrarObjeto(){
+    const tituloValue = titulo.value
+    const autorValue = autor.value
+    const numpaginasValue = Number(numpaginas.value)
+
+    const livro = {
+        titulo: tituloValue,
+        autor: autorValue,
+        numpaginas: numpaginasValue
+    }
+
+    for (let itens in livro) {
+        output.innerHTML += `<li>${itens}: ${livro[itens]}</li>`
+    } // Outra maneira de mostrar o objeto usando um loop e mostrando em uma lista 
+
+    // output.innerHTML = `Objeto: ${JSON.stringify(livro)}`
+}

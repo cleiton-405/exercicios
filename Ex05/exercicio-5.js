@@ -1,13 +1,15 @@
-let num = 0
+const output = document.getElementById("output")
+
+function numerosNormal(){
+    let num = 0
     for(num = 1; num <= 10; num++){
-        console.log(num)
+        output.innerHTML += `${num}-`
     }
+}
 
-console.log("----------")
-
-let output = ''
-    for (let i = 1; i <= 10; i++) {
-        output += i + ' '
+function numerosAbaixo(){
+    let num = 0
+    for (num = 1; num <= 10; num++) {
+        output.innerHTML += `${num}<br>`
     }
-    console.log(output)
-    
+}

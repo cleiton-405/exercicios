@@ -1,45 +1,39 @@
-            alert(" ---- BOA TARDE ---- ")
-            alert(" ---- DIGITE UM NÚMERO ---- ")
-            alert(" 1 - SOMA ")
-            alert(" 2 - SUBTRAÇÃO ")
-            alert(" 3 - MULTIPLICAÇÃO ")
-            alert(" 4 - DIVISÃO ")
-            alert(" 0 - SAIR DO PROGRAMA ")
+const output = document.getElementById("output")
+const n1 = document.getElementById("n1")
+const n2 = document.getElementById("n2")
+const op = document.getElementById("op")
 
-            let num = parseInt(prompt("Digite sua opção: "))
+function operadoresLogicos(){
+    const opValue = Number(op.value)
 
-            if(num >= 1 && num <= 4){
+        const n1Value = Number(n1.value)
+        const n2Value = Number(n2.value)
 
-            let n1 = parseFloat(prompt("Digite o primeiro número: "))
-            let n2 = parseFloat(prompt("Digite o segundo número: "))
+        let resultado = 0
 
-            switch(num){
-                case 1:
-                    soma = 0
-                    soma = n1 + n2
+        switch(opValue){
+            case 1:
+                resultado = n1Value + n2Value
                     
-                    console.log("A soma dos números é: "+soma)
-                break;
-                case 2:
-                    subtracao = 0
-                    subtracao = n1 - n2
+                output.innerHTML = "A soma dos números é: "+resultado
+            break;
+            case 2:
+                resultado = n1Value - n2Value
 
-                    console.log("A subtração dos números é: "+subtracao)
-                break;
-                case 3:
-                    multiplicacao = 0
-                    multiplicacao = n1 * n2
+                output.innerHTML = "A subtração dos números é: "+resultado
+            break;
+            case 3:
+                resultado = n1Value * n2Value
 
-                    console.log("A multiplicação dos números é: "+multiplicacao)
-                break;
-                case 4:
-                    divisao = 0
-                    divisao = n1 / n2
-
-                    console.log("A divisão dos números é: "+divisao)
-                break;
+                output.innerHTML = "A multiplicação dos números é: "+resultado
+            break;
+            case 4:
+                if(n2Value === 0){
+                    output.innerHTML = "Divisão por zero não é permitida."
+                }else{
+                    resultado = n1Value / n2Value
+                    output.innerHTML = "A divisão dos números é: " + resultado
+                }
+            break;
             }
-
-            }else{
-                alert(" !!! SAIU DO PROGRAMA !!! ")
-            }
+}

@@ -1,42 +1,45 @@
-let numeros = []
-let n1 = 0
-let n2 = 0
-let n3 = 0
+const output = document.getElementById("output")
+const n1 = document.getElementById("n1")
+const n2 = document.getElementById("n2")
+const n3 = document.getElementById("n3")
 
-    for(let i = 0; i < 3; i++){
-        let num = parseInt(prompt("Digite um número: "))
+function ordemCrescente(){
+    let n1Value = Number(n1.value)
+    let n2Value = Number(n2.value)
+    let n3Value = Number(n3.value)
 
-        numeros[i] = num
-    }
+    let maior = 0
+    let menor = 0
+    let meio = 0
 
-    if(numeros[0] > numeros[1] && numeros[0] > numeros[2]){
-        n3 = numeros[0]
-            if(numeros[1] > numeros[2]){
-                n2 = numeros[1]
-                n1 = numeros[2]
+    if(n1Value > n2Value && n1Value > n3Value){
+        maior = n1Value
+            if(n2Value > n3Value){
+                meio = n2Value
+                menor = n3Value
             }else{
-                n2 = numeros[2]
-                n1 = numeros[1]
+                meio = n3Value
+                menor = n2Value
             }
-    }else if(numeros[0] < numeros[1] && numeros[0] < numeros[2]){
-        n1 = numeros[0]
-            if(numeros[1] < numeros[2]){
-                n2 = numeros[1]
-                n3 = numeros[2]
+    }else if(n1Value < n2Value && n1Value < n3Value){
+        menor = n1Value
+            if(n2Value < n3Value){
+               meio = n2Value 
+               maior = n3Value
             }else{
-                        n2 = numeros[2]
-                        n3 = numeros[1]
+                maior = n2Value
+                meio = n3Value
             }
     }else{
-        n2 = numeros[0]
-            if(numeros[1] > numeros[2]){
-                n3 = numeros[1]
-                n1 = numeros[2]
+        meio = n1Value
+            if(n2Value > n3Value){
+                menor = n3Value
+                maior = n2Value
             }else{
-                n3 = numeros[2]
-                n1 = numeros[1]
+                maior = n3Value
+                menor = n2Value
             }
     }
 
-    console.log("Números digitados: "+numeros)
-    console.log("Números ordenados: "+n1+" - "+n2+" - "+n3)  
+    output.innerHTML = `Números em ordem crescente: ${menor} - ${meio} - ${maior}`
+}

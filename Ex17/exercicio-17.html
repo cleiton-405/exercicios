@@ -15,9 +15,40 @@
 
         <!--
     
-        Crie um programa que solicite ao usuário dois números e exiba o resultado da soma, subtração, multiplicação e divisão desses números.
+            Crie um programa que solicite ao usuário dois números e exiba o resultado da soma, subtração, multiplicação e divisão desses números.
     
         -->
+
+        <p> ---- Bem-vindo a calculadora ---- </p>
+
+        <label>Digite um número:
+            <input type="number" id="n1">
+        </label>
+
+        <br><br>
+
+        <label>Digite um número:
+            <input type="number" id="n2">
+        </label>
+
+        <br><br>
+
+        <label>Operação:</label>
+            <select id="op">
+                <option disabled selected>Escolha</option>
+                <option value="1">Soma</option>
+                <option value="2">Subtração</option>
+                <option value="3">Multiplicação</option>
+                <option value="4">Divisão</option>
+            </select>
+
+        <br><br>
+
+        <button onclick="operadoresLogicos()">Resultado</button>
+
+        <br><br>
+
+        <output id="output"></output>
 
         <script src="exercicio-17.js"></script>
 

@@ -1,54 +1,52 @@
-            let total = 0
+const output = document.getElementById("output")
+const codigo = document.getElementById("codigo")
+const qtd = document.getElementById("qtd")
 
-            alert(" 100 - Cachorro Quente ")
-            alert(" 101 - Bauru Simples ")
-            alert(" 102 - Bauru com ovo ")
-            alert(" 103 - Hambúrguer ")
-            alert(" 104 - Cheeseburguer ")
-            alert(" 105 - Refrigerante ")
-            alert(" -- Cardápio restaurante -- ")
+let total = 0
 
-            while (true) {
-                let codigo = parseInt(prompt("Digite o código do produto (0 para encerrar):"))
+function adicionarProduto(){
+    const codigoValue = Number(codigo.value)
+    const qtdValue = Number(qtd.value)
 
-                if (codigo === 0) {
-                break
-                }
+    let preco = 0
+    let nomeProduto = ""
 
-                if (codigo < 100 || codigo > 105) {
-                alert("Código inválido! Tente novamente.")
-                continue
-                }
+    switch (codigoValue) {
+        case 100:
+            preco = 1.20
+            nomeProduto = "Cachorro Quente"
+        break
+        case 101:
+            preco = 1.30
+            nomeProduto = "Bauru Simples"
+        break
+        case 102:
+            preco = 1.50
+            nomeProduto = "Bauru com Ovo"
+        break
+        case 103:
+            preco = 1.20
+            nomeProduto = "Hambúrguer"
+        break
+        case 104:
+            preco = 1.70
+            nomeProduto = "Cheeseburguer"
+        break
+        case 105:
+            preco = 2.20
+            nomeProduto = "Refrigerante"
+        break
+        default:
+            output.innerHTML = `!!! Código inválido !!!`
+        return
+    }
 
-                let quantidade = parseInt(prompt("Qual a quantidade desse produto?"))
+        let totalProdutos = preco * qtdValue
+        total += totalProdutos
 
-                let preco = 0
-                let nomeProduto = ""
+        output.innerHTML = `${nomeProduto} adicionado com sucesso (R$ ${totalProdutos})`
+}
 
-                if (codigo === 100) {
-                    preco = 1.20
-                    nomeProduto = "Cachorro Quente"
-                } else if (codigo === 101) {
-                    preco = 1.30
-                    nomeProduto = "Bauru Simples"
-                } else if (codigo === 102) {
-                    preco = 1.50
-                    nomeProduto = "Bauru com ovo"
-                } else if (codigo === 103) {
-                    preco = 1.20
-                    nomeProduto = "Hambúrguer"
-                } else if (codigo === 104) {
-                    preco = 1.30
-                    nomeProduto = "Cheeseburguer"
-                } else if (codigo === 105) {
-                    preco = 1.00
-                    nomeProduto = "Refrigerante"
-                }
-
-                let totalItem = preco * quantidade
-                total= total + totalItem
-
-                alert(nomeProduto + " - Quantidade: " + quantidade + " - Total: R$ " + totalItem)
-                }
-
-                alert("Total do pedido: R$ " + total)
+function totalPedidos(){
+    return output.innerHTML = `Total do pedido: R$ ${total.toFixed(2)}`
+}

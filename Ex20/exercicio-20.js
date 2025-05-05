@@ -1,19 +1,24 @@
-            let n = parseInt(prompt("Digite um número entre 0-6:"))
+const output = document.getElementById("output")
+const n1 = document.getElementById("n1")
 
-            if(n == 0){
-                console.log("DOMINGO")
-            }else if(n == 1){
-                console.log("SEGUNDA")
-            }else if(n == 2){
-                console.log("TERÇA")
-            }else if(n == 3){
-                console.log("QUARTA")
-            }else if(n == 4){
-                console.log("QUINTA")
-            }else if(n == 5){
-                console.log("SEXTA")
-            }else if(n == 6){
-                console.log("SABADO")
-            }else{
-                console.log(" !!! NÚMERO INVÁLIDO !!! ")
-            }
+function semana(){
+    const n1Value = Number(n1.value)
+
+        if(n1Value == 0){
+            output.innerHTML = ("DOMINGO")
+        }else if(n1Value == 1){
+            output.innerHTML = ("SEGUNDA-FEIRA")
+        }else if(n1Value == 2){
+            output.innerHTML = ("TERÇA-FEIRA")
+        }else if(n1Value == 3){
+            output.innerHTML = ("QUARTA-FEIRA")
+        }else if(n1Value == 4){
+            output.innerHTML = ("QUINTA-FEIRA")
+        }else if(n1Value == 5){
+            output.innerHTML = ("SEXTA-FEIRA")
+        }else if(n1Value == 6){
+            output.innerHTML = ("SABADO")
+        }else{
+            output.innerHTML = (" !!! NÚMERO INVÁLIDO !!! ")
+        }
+}

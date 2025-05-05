@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: darkcyan;
+    color: white;
+}
+
+.tabela{
+    display: flex;
+    justify-content: center;
+}
+
+th, td{
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+}
+
+thead:first-child{
+    color: rgb(163, 214, 23);
+    background-color: black;
+}

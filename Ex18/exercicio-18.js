@@ -1,16 +1,22 @@
-            let nota1 = parseFloat(prompt("Digite a primeira nota: "))
-            let nota2 = parseFloat(prompt("Digite a segunda nota: "))
+const output = document.getElementById("output")
+const n1 = document.getElementById("n1")
+const n2 = document.getElementById("n2")
 
-            media = 0
+function resultado(){
+    const n1Value = Number(n1.value)
+    const n2Value = Number(n2.value)
 
-            media = (nota1 + nota2) / 2 
+    let media = 0
 
-            if(media >= 7){
-                if(media === 10){
-                    console.log(" !!! APROVADO COM DISTINÇÃO (TU É PIKA MESMO) !!! ")
-                }else{
-                    console.log(" !!! APROVADO (FEZ O MÍNIMO) !!! ")
-                }
+    media = (n1Value + n2Value) / 2 
+
+        if(media >= 7){
+            if(media === 10){
+                output.innerHTML = " !!! APROVADO COM DISTINÇÃO (TU É PIKA MESMO) !!! "
             }else{
-                console.log(" !!! REPROVADO IDIOTA !!! ")
+                output.innerHTML = " !!! APROVADO (FEZ O MÍNIMO) !!! "
             }
+        }else{
+            output.innerHTML = " !!! REPROVADO IDIOTA !!! "
+        }
+}

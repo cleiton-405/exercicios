@@ -1,48 +1,54 @@
-            let nota1 = parseFloat(prompt("Digite a primeira nota: "))
-            let nota2 = parseFloat(prompt("Digite a segunda nota: "))
+const output = document.getElementById("output")
+const n1 = document.getElementById("n1")
+const n2 = document.getElementById("n2")
 
-            let media = 0
+function notas(){
+    const n1Value = Number(n1.value)
+    const n2Value = Number(n2.value)
 
-            media = (nota1 + nota2) / 2
+    let media = 0
 
-            if(media >= 9 && media <= 10){
+    media = (n1Value + n2Value) / 2
+
+    if(media >= 9 && media <= 10){
                 
-                console.log("Nota 1: "+nota1)
-                console.log("Nota 2: "+nota2)
-                console.log("Sua média: "+media)
-                console.log("Conceito: "+ "A")
-                console.log(" !!! APROVADO !!! ")
+        output.innerHTML = `<li> Nota 1: ${n1Value} </li> <br>
+        <li> Nota 2: ${n2Value} </li> <br>
+        <li> Sua média: ${media} </li> <br>
+        <li> Conceito: A </li> <br>
+        <li> !!! APROVADO !!! </li>`
 
-            }else if(media >= 7.5 && media < 9){
+    }else if(media >= 7.5 && media < 9){
                 
-                console.log("Nota 1: "+nota1)
-                console.log("Nota 2: "+nota2)
-                console.log("Sua média: "+media)
-                console.log("Conceito: "+ "B")
-                console.log(" !!! APROVADO !!! ")
+        output.innerHTML = `<li> Nota 1: ${n1Value} </li> <br>
+        <li> Nota 2: ${n2Value} </li> <br>
+        <li> Sua média: ${media} </li> <br>
+        <li> Conceito: B </li> <br>
+        <li> !!! APROVADO !!! </li>`
 
-            }else if(media >= 6 && media < 7.5){
+    }else if(media >= 6 && media < 7.5){
                 
-                console.log("Nota 1: "+nota1)
-                console.log("Nota 2: "+nota2)
-                console.log("Sua média: "+media)
-                console.log("Conceito: "+ "C")
-                console.log(" !!! APROVADO !!! ")
+        output.innerHTML = `<li> Nota 1: ${n1Value} </li> <br>
+        <li> Nota 2: ${n2Value} </li> <br>
+        <li> Sua média: ${media} </li> <br>
+        <li> Conceito: C </li> <br>
+        <li> !!! APROVADO !!! </li>`
 
-            }else if(media >= 4 && media < 6){
+    }else if(media >= 4 && media < 6){
                 
-                console.log("Nota 1: "+nota1)
-                console.log("Nota 2: "+nota2)
-                console.log("Sua média: "+media)
-                console.log("Conceito: "+ "D")
-                console.log(" !!! REPROVADO !!! ")
+        output.innerHTML = `<li> Nota 1: ${n1Value} </li> <br>
+        <li> Nota 2: ${n2Value} </li> <br>
+        <li> Sua média: ${media} </li> <br>
+        <li> Conceito: D </li> <br>
+        <li> !!! REPROVADO !!! </li>`
 
-            }else if(media >= 0 || media < 0 && media < 4){
+    }else if(media >= 0 || media < 0 && media < 4){
                 
-                console.log("Nota 1: "+nota1)
-                console.log("Nota 2: "+nota2)
-                console.log("Sua média: "+media)
-                console.log("Conceito: "+ "E")
-                console.log(" !!! REPROVADO !!! ")
+        output.innerHTML = `<li> Nota 1: ${n1Value} </li> <br>
+        <li> Nota 2: ${n2Value} </li> <br>
+        <li> Sua média: ${media} </li> <br>
+        <li> Conceito: E </li> <br>
+        <li> !!! REPROVADO !!! </li>`
 
-            }
+    }
+}

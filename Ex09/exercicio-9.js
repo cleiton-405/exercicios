@@ -1,14 +1,24 @@
-let num = parseInt(prompt("Digite um número"))
-    divisores = 0
+const output = document.getElementById("output")
+const num = document.getElementById("num")
 
-    for(i = 1 ; i <= num ; i++){
-        if(num % i == 0){
+function verificaNumeroPrimo(){
+    const numValue = parseInt(num.value)
+
+    if(isNaN(numValue) || numValue < 1){
+        alert(" !!! Digite apenas números e positivos !!! ")
+    }
+
+    let divisores = 0
+
+    for(i = 1 ; i <= numValue ; i++){
+        if(numValue % i == 0){
             divisores++
         }
   	}
     
     if(divisores == 2){
-        console.log("O "+num+" é primo")
+        output.innerHTML = `O número ${numValue} é primo`
     }else{
-        console.log("O "+num+" não é primo")
+        output.innerHTML = `O número ${numValue} não é primo`
     }
+}

@@ -1,18 +1,22 @@
-//USANDO UMA FUNÇÃO E SORT PARA ORDENAR OS NÚMER
+const output = document.getElementById("output")
+const n1 = document.getElementById("n1")
 let numeros = []
-            
-    for(let i = 0; i <= 4; i++){
-        let num = parseInt(prompt("Digite um número: "))
-                
-        numeros[i] = num
-    }
-            
-    function compararNumeros(a, b){
-        return a - b
+
+//USANDO UMA FUNÇÃO E SORT PARA ORDENAR OS NÚMEROS
+
+function ordemCrescente(){
+    const n1Value = Number(n1.value)
+
+    if(isNaN(n1Value)){
+        alert("Por favor, insira um número válido.")
     }
 
+    numeros.push(n1Value) // Adiciona o número ao array
+
+    // Ordena o array em ordem crescente
     numeros.sort(function (a, b) {
         return a - b
     })
-    
-    console.log("Os números ordenados: "+numeros)
+
+    output.innerHTML = `Ordem dos números: ${numeros}`
+}

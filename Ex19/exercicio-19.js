@@ -1,28 +1,35 @@
-    let valorSuaHora = parseFloat(prompt("Digite o valor da sua hora: "))
-    let quantidadeHorasTrabalhadas = parseInt(prompt("Digite a sua quantidade de hor    trabalhadas no mês: "))
+const output = document.getElementById("output")
+const valorHoras = document.getElementById("valorHora")
+const qtdHoras = document.getElementById("qtdHoras")
+    
+function folhaDePagamento(){
+    const valorHoraValue = Number(valorHora.value)
+    const qtdHorasValue = Number(qtdHoras.value)
 
-    salarioBruto = valorSuaHora * quantidadeHorasTrabalhadas
+    salarioBruto = valorHoraValue * qtdHorasValue
             
-    if(salarioBruto <= 900){
-        descontoimpostoDeRenda = 0
-    }else if(salarioBruto <= 1500){
-        descontoimpostoDeRenda = 0.05
-    }else if(salarioBruto <= 2500){
-        descontoimpostoDeRenda = 0.10
-    }else{
-        descontoimpostoDeRenda = 0.20
-    }
+        if(salarioBruto <= 900){
+            descontoimpostoDeRenda = 0
+        }else if(salarioBruto <= 1500){
+            descontoimpostoDeRenda = 0.05
+        }else if(salarioBruto <= 2500){
+            descontoimpostoDeRenda = 0.10
+        }else{
+            descontoimpostoDeRenda = 0.20
+        }
 
     ir = salarioBruto * descontoimpostoDeRenda
     inss = salarioBruto * 0.10
     fgts = salarioBruto * 0.11
 
-    totalDescontos = ir + inss
-    salarioLiquido = salarioBruto - totalDescontos
+        totalDescontos = ir + inss
+        salarioLiquido = salarioBruto - totalDescontos
 
-    console.log("Seu salário bruto: "+salarioBruto)
-    console.log("Desconto IR: "+ir)
-    console.log("Desconto INSS: "+inss)
-    console.log("FGTS: "+fgts)
-    console.log("Total descontos: "+totalDescontos)
-    console.log("Salário liquido: "+salarioLiquido)
+    output.innerHTML = ` Lista detalhada sobre o pagamento e descontos <br><br>
+    <li> Seu salário bruto: ${salarioBruto} </li> <br>
+    <li>Desconto IR: ${ir} </li> <br>
+    <li>Desconto INSS: ${inss} </li> <br>
+    <li>FGTS: ${fgts} </li> <br>
+    <li>Total descontos:: ${totalDescontos} </li> <br>
+    <li>Salário liquido: ${salarioLiquido} </li> <br>`
+}

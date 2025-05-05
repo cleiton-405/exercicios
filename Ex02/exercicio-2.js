@@ -1,13 +1,22 @@
-while(true){
-    let nome = prompt("Digite seu nome: ")
-    let senha = prompt("Digite sua senha: ")
+const output = document.getElementById("output")
+const senha = document.getElementById("senha")
+const nome = document.getElementById("nome")
 
-    if(nome == senha){
-        alert("!!! Nome e senha iguais, digite novamente !!!")
-        continue
+function validarNomeESenha(){
+    try{
+        const nomeValue = nome.value.toLowerCase()
+        const senhaValue = senha.value.toLowerCase()
+
+        if(nomeValue == senhaValue){
+            alert("!!! Nome e senha iguais !!!")   
+        }
+
+        if(nomeValue !== senhaValue){
+            alert("!!! Tudo certo !!!")   
+        }
+
+        output.innerHTML = `User: ${nomeValue} --- Password: ${senhaValue}`
+    }catch(error){
+        throw Error ("Erro"+error.message)
     }
-
-    console.log("Seu nome é: "+nome)
-    console.log("Sua senha é: "+senha)
-    break
 }
