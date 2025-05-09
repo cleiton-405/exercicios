@@ -1,12 +1,22 @@
-            let string = prompt("Digite uma palavra: ")
+const output = document.getElementById("output")
+const palavra = document.getElementById("palavra")
 
-            const vogais = "aeiouAEIOU"
-            let contador = 0
+function contadorVogais(){
+    const palavraValue = palavra.value
 
-            for(let i = 0; i < string.length; i++){
-                if(vogais.includes(string[i])){
-                    contador++
-                }
-            }
+    if(!isNaN(palavraValue) && palavraValue !== ""){
+        output.innerHTML = ` !!! Digite apenas palavras !!! `
+        return
+    }
 
-            console.log("Quantidade de vogais: "+contador)
+    const vogais = "aeiouAEIOUáéíóúÁÉÍÓÚ"
+    let contador = 0
+
+    for(let i = 0; i < palavraValue.length; i++){
+        if(vogais.includes(palavraValue[i])){
+            contador++
+        }
+    }
+
+    output.innerHTML = `Quantidade de vogais: ${contador}`
+}

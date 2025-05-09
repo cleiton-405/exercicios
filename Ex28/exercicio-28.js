@@ -1,29 +1,26 @@
-while(true){
+const output = document.getElementById("output")
+const idade = document.getElementById("idade")
 
-    let idade = parseInt(prompt("Digite sua idade (0 para sair): "))
+function resultado(){
+    const idadeValue = Number(idade.value)
 
-    if(idade === 0){
-        alert("Você saiu do programa")
-        break
-    }
-
-    if(idade < 1 || idade === ""){
-        alert(" !!! DIGITE UMA IDADE !!! ")
-        continue
-    }
+        if(idadeValue < 1){
+            output.innerHTML = ` !!! DIGITE UMA IDADE MAIOR QUE 1 !!! `
+            return
+        }
 
         switch(true){
-            case (idade > 0 && idade < 10):
-                alert("Você é uma criança")
+            case (idadeValue > 0 && idadeValue < 10):
+                output.innerHTML = `Você é uma criança`
             break
-            case (idade >= 10 && idade < 18):
-                alert("Você é um adolescente")
+            case (idadeValue >= 10 && idadeValue < 18):
+                output.innerHTML = `Você é um adolescente`
             break
-            case (idade >= 18 && idade < 60):
-                alert("Você é um adulto")
+            case (idadeValue >= 18 && idadeValue < 60):
+                output.innerHTML = `Você é um adulto`
             break
-            case (idade >= 60):
-                alert("Você é um idoso")
+            case (idadeValue >= 60):
+                output.innerHTML = `Você é um idoso`
             break        
         }
-    }
+}

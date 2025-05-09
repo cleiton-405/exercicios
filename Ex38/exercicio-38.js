@@ -1,22 +1,22 @@
-            const numeros = []
+const output = document.getElementById("output")
+const num = document.getElementById("num")
 
-            for(let i = 0; i < 5; i++){
-                let n1 = parseInt(prompt("Digite um número: "))
+const numeros = []
 
-                numeros[i] = n1
-            }
+function maioreMenor(){
+    const numValue = Number(num.value)
 
-            console.log("Números da array")
-            console.log(numeros)
-            
-            let max = Math.max(...numeros)
-            console.log("Maior número:")
-            console.log(max)
-            //Usado método math.max() para identificar o maior número em uma array
-            //Operador spread (...) para verificar dentro de uma array
+    numeros.push(numValue)
 
-            let min = Math.min(...numeros)
-            console.log("Menor número:")
-            console.log(min)
-            //Usado método math.min() para identificar o menor número em uma array
-            //Operador spread (...) para verificar dentro de uma array
+    let max = Math.max(...numeros)
+    //Usado método math.max() para identificar o maior número em uma array
+    //Operador spread (...) para verificar dentro de uma array
+
+    let min = Math.min(...numeros)
+    //Usado método math.min() para identificar o menor número em uma array
+    //Operador spread (...) para verificar dentro de uma array
+
+    output.innerHTML = `Números da array: ${numeros.join(" - ")} <br>
+    Maior número: ${max} <br>
+    Menor número: ${min}`
+}

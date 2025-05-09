@@ -1,15 +1,15 @@
-            const numeros = []
+const output = document.getElementById("output")
+const num = document.getElementById("num")
 
-            for(let i = 0; i < 5; i++){
-                let n1 = parseInt(prompt("Digite um número: "))
+const numeros = []
 
-                numeros[i] = n1
-            }
+function numerosPares(){
+    const numValue = Number(num.value)
 
-            console.log("Números da array")
-            console.log(numeros)
-            
-            const numerosPares = numeros.filter(num => num % 2 === 0)
+    numeros.push(numValue)
+    
+    const pares = numeros.filter(num => num % 2 === 0)
 
-            console.log("Números pares")
-            console.log(numerosPares)
+    output.innerHTML = `Números da array: ${numeros.join(" - ")} <br>
+    Números pares: ${pares.join(" - ")}`
+}

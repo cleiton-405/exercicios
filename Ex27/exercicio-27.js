@@ -1,44 +1,34 @@
-            alert(" --- Menu interativo --- ")
-            alert(" 1- Verificar par ou Ímpar ")
-            alert(" 2- Calcular fatorial ")
-            alert(" 3- Sair do menu")
+const output = document.getElementById("output")
+const num = document.getElementById("num")
 
-            while(true){
-                let menu = parseInt(prompt("Digite sua opção do menu: "))
+function imparEPar(){
+    const numValue = Number(num.value)
 
-                if(menu === 3){
-                    alert("Obrigado por usar o programa")
-                    break
-                }
+        if(numValue % 2 === 0){
+            output.innerHTML = `${numValue} é Par.`
+        }else{
+            output.innerHTML = `${numValue} é ímpar`
+        }
+}
 
-                if (menu < 1 || menu > 4) {
-                    alert(" !!! Número inválido, tente novamente !!! ")
-                    continue
-                }
+function calcularFatorial(){
+    let numValue = Number(num.value)
 
-                switch(menu){
-                    case 1:
-                        let num = parseInt(prompt("Digite um número: "))
-                            if(num % 2 === 0){
-                                alert("Número é par")
-                            }else{
-                                alert("Número é ímpar")
-                            }
-                    break
-                    case 2: 
-                        let fat = parseInt(prompt("Digite um número: "))
+    if(numValue < 0 ){
+        output.innerHTML = ` !!! Não têm fatorial de números negativos !!! `
+        return
+    }
 
-                        if (fat === 0 || fat === 1){
-                            fat = 1
-                        }    
-                        for (let i = fat - 1; i >= 1; i--) {
-                            fat = fat * i;
-                            alert("Fatorial: "+fat)
-                        }
-                    break
-                    case 3: 
-                        alert(" !!! Você saiu do menu interativo !!! ")
-                    break
-                }
+    if(numValue === 0 || numValue === 1){
+        output.innerHTML = `Fatorial: 1`
+        return
+    }
 
-            }
+    let resultado = numValue
+
+    for(let i = numValue - 1; i >= 1; i--){
+        resultado *= i //resultado = resultado * i
+    }
+
+    output.innerHTML = `Fatorial: ${resultado}`
+}

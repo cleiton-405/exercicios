@@ -1,9 +1,20 @@
-            let marca = prompt("Digite a marca do carro: ")
-            let modelo = prompt("Digite o modelo do carro: ")
-            let ano = parseInt(prompt("Digite o ano do carro: "))
+const output = document.getElementById("output")
+const marca = document.getElementById("marca")
+const modelo = document.getElementById("modelo")
+const ano = document.getElementById("ano")
 
-            const carro = {marca, modelo, ano}
+function resultado(){
+    const marcaValue = marca.value
+    const modeloValue =  modelo.value
+    const anoValue = Number(ano.value)
 
-            for(let prop in carro){
-                console.log(carro[prop])
-            }
+    const carro = {
+        marca:marcaValue,
+        modelo: modeloValue,
+        ano: anoValue
+    }
+
+    for(let prop in carro){
+        output.innerHTML += `${prop} ${carro[prop]} <br>`
+    }
+}

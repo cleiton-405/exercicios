@@ -1,11 +1,23 @@
-            let nome = prompt("Digite seu nome: ")
-            let nota1 = parseFloat(prompt("Digite sua nota 1: "))
-            let nota2 = parseFloat(prompt("Digite sua nota 2: "))
+const output = document.getElementById("output")
+const nome = document.getElementById("nome")
+const nota1 = document.getElementById("nota1")
+const nota2 = document.getElementById("nota2")
 
-            const aluno = {nome, nota1, nota2}
+function media(){
+    const nomeValue = nome.value
+    const nota1Value = Number(nota1.value)
+    const nota2Value = Number(nota2.value)
 
-            media = 0
+    const aluno = {
+        nome: nomeValue,
+        nota1: nota1Value,
+        nota2: nota2Value
+    }
 
-            media = (aluno.nota1 + aluno.nota2) / 2
+    mediaNotas = 0
 
-            console.log(`O ${aluno.nome} tirou ${aluno.nota1} e ${aluno.nota2}. Teve uma media de `+media+".")
+    mediaNotas = (aluno.nota1 + aluno.nota2) / 2
+
+    output.innerHTML = `O aluno ${aluno.nome} tirou as notas: ${aluno.nota1} e ${aluno.nota2}. E obteve uma média de ${mediaNotas}`
+
+}

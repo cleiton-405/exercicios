@@ -1,31 +1,24 @@
-while(true){
-    let temp = parseInt(prompt(" Digite a temperatura (0 para sair do programa): "))
+const output = document.getElementById("output")
+const temp = document.getElementById("temp")
 
-    if(temp === 0){
-        alert(" !!! Saiu do programa !!! ")
-        break
-    }
-
-    if(isNaN(temp)){
-        alert(" !!! DIGITE APENAS NÚMEROS !!! ")
-        continue
-    }
+function temperatura(){
+    const tempValue = Number(temp.value)
 
     switch(true){
-        case (temp < 0):
-            alert("Congelante")
+        case (tempValue < 0):
+            output.innerHTML = `Congelante`
         break
-        case (temp >= 0 && temp <= 10):
-            alert("Frio")
+        case (tempValue >= 0 && tempValue <= 10):
+            output.innerHTML = `Frio`
         break    
-        case (temp >= 11  && temp <= 20):
-            alert("Agradável")
+        case (tempValue >= 11  && tempValue <= 20):
+            output.innerHTML = `Agradável`
         break
-        case (temp >= 21 && temp <= 30):
-            alert("Quente")
+        case (tempValue >= 21 && tempValue <= 30):
+            output.innerHTML = `Quente`
         break
-        case (temp > 30):
-            alert("Muito quente")
+        case (tempValue > 30):
+            output.innerHTML = `Muito quente`
         break        
     }
 }

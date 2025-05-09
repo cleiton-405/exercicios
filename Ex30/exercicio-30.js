@@ -1,38 +1,47 @@
-            alert(" ----- Cardápio -----")
-            alert(" 1- Pizza (R$ 30) ")
-            alert(" 2- Hambúrguer (R$ 15) ")
-            alert(" 3- Salada (R$ 10) ")
-            alert(" 4- Refeição completa (R$ 40) ")
+const output = document.getElementById("output")
+const qtd = document.getElementById("qtd")
+const codigo = document.getElementById("codigo")
 
-            while(true){
-                let menu = parseInt(prompt(" Digite um item do cardápio (0 para sair do programa): "))
+let total = 0
 
-                if(menu === 0){
-                    alert(" !!! VOCÊ SAIU DO PROGRAMA !!! ")
-                    break
-                }
+function adicionarProdutos(){
+    const qtdValue = Number(qtd.value)
+    const codigoValue = Number(codigo.value)
 
-                if(menu < 0 || menu > 5 || isNaN(menu)){
-                    alert(" !!! DIGITE UM NÚMERO VÁLIDO !!! ")
-                    continue
-                }
+        let preco = 0
+        let nome = ""
 
-                switch(menu){
-                    case 1:
-                        total = 30 + (30 * 0.1)
-                        alert("Preço: R$ 30 -- Total: "+total)
-                    break
-                    case 2:
-                        total = 15 + (15 * 0.1)
-                        alert("Preço: R$ 15 -- Total: "+total)
-                    break
-                    case 3:
-                        total = 10 + (10 * 0.1)
-                        alert("Preço: R$ 10 -- Total: "+total)
-                    break
-                    case 4:
-                        total = 40 + (40 * 0.1)
-                        alert("Preço: R$ 40 -- Total: "+total)
-                    break
-                }
-            }
+        switch (codigoValue) {
+            case 1:
+                preco = 30
+                nome = "Pizza"
+            break
+            case 2:
+                preco = 15
+                nome = "Hambúrguer"
+            break
+            case 3:
+                preco = 10
+                nome = "Salada"
+            break
+            case 4:
+                preco = 40
+                nome = "Refeição completa"
+            break
+            default:
+                output.innerHTML = "Código inválido."
+                return
+        }
+
+    const subtotal = qtdValue * preco
+    const taxa = subtotal * 0.1
+    const totalItem = subtotal + taxa
+
+        total += totalItem
+    
+        output.innerHTML = `${nome} adicionado com sucesso. Subtotal: R$ ${totalItem.toFixed(2)}`
+}
+
+function totalProdutos(){
+    output.innerHTML = `Total acumulado: R$ ${total.toFixed(2)}`
+}            

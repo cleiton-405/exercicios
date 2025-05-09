@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/Ex01/style.css">
+    <link rel="stylesheet" href="exercicio-29.css">
 
     <title>Exercicio</title>
 
 </head>
 <body>
     
-    <h1>Lista de exercicios</h1>
+    <h1>Conversor</h1>
 
         <!--
     
@@ -22,6 +22,52 @@
             1 R$ = 0.16 GBP
 
         -->
+
+        <div class="tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="4">Tabela de conversão</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>R$ 1,00</td>
+                        <td>USD 0.20</td>
+                        <td><output id="usd"></output></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>R$ 1,00</td>
+                        <td>EUR 0.18</td>
+                        <td><output id="eur"></output></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>R$ 1,00</td>
+                        <td>GBP 0.16</td>
+                        <td><output id="gbp"></output></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+
+        <label>
+            <input type="number" id="moeda" placeholder="Escolha um número acima...">
+        </label>
+
+        <br><br>
+
+        <label>
+            <input type="number" id="num" placeholder="Digite um valor...">
+        </label>
+
+        <br><br>
+
+        <button onclick="conversor()">Conversão</button>
 
         <script src="exercicio-29.js"></script>
 

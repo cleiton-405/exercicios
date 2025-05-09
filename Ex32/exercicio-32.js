@@ -1,15 +1,20 @@
-            let nome = prompt("Digite seu nome:")
-            let idade = parseInt(prompt("Digite sua idade:"))
-            let profissao = prompt("Digite sua profissão:")
+const output = document.getElementById("output")
+const nome = document.getElementById("nome")
+const idade = document.getElementById("idade")
+const profissao = document.getElementById("profissao")
 
-            const pessoa = {nome, idade, profissao}
+function resultado(){
+    const nomeValue = nome.value
+    const idadeValue = Number(idade.value)
+    const profissaoValue = profissao.value
 
-            console.log(pessoa)
-
-            /*
-            
-            Neste estilo, os valores vão ser imprimidos na tela
-
-            document.write(pessoa.nome+" - "+pessoa.idade+" - "+pessoa.profissao)
-
-            */
+    const pessoa = {
+        nome: nomeValue,
+        idade: idadeValue,
+        profissao: profissaoValue
+    }
+    
+    output.innerHTML = `Nome: ${pessoa.nome} <br>
+    Idade: ${pessoa.idade} <br>
+    Profissão: ${pessoa.profissao}`
+}
