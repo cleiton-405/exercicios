@@ -1,11 +1,14 @@
-let titulo = prompt("Digite o título do livro: ")
-let autor = prompt("Digite o autor do livro: ")
-let anoPublicacao = parseInt(prompt("Digite o ano da publicação do livro: "))
-
-const livro = {titulo, autor, anoPublicacao}
-
 function informacoes(){
-    console.log(`O livro ${livro.titulo} foi escrito por ${livro.autor} e publicado em ${livro.anoPublicacao}`)
-}
+    const output = document.getElementById("output")
+    const tituloValue = document.getElementById("titulo").value
+    const autorValue = document.getElementById("autor").value
+    const anoPublicacaoValue = Number(document.getElementById("anopublicacao").value)
 
-informacoes()
+    const livro = {
+        titulo: tituloValue,
+        autor: autorValue,
+        anoPublicacao:anoPublicacaoValue
+    }
+
+    output.innerHTML = `O livro ${livro.titulo} foi escrito por ${livro.autor} e publicado em ${livro.anoPublicacao}`
+}

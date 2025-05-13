@@ -1,31 +1,24 @@
+function saudacao(){
+    const horaValue = Number(document.getElementById("hora").value)
 
-while(true){
-    let horario = parseInt(prompt("Digite um horário de 0-23: "))
-
-    if(horario === -1){
-        alert("Você saiu do programa")
-        break
-    }
-
-    if(isNaN(horario)){
-        alert(" !!! DIGITE APENAS NÚMEROS !!! ")
-        continue
+    if(horaValue == -1){
+        alert(" !!! Horário inexistente !!! ")
     }
 
     switch(true){
-        case (horario >= 0 && horario <= 5):
+        case (horaValue >= 0 && horaValue <= 5):
             alert(" Boa madrugada ")
         break 
-        case (horario >= 6 && horario <= 11):
+        case (horaValue >= 6 && horaValue <= 11):
             alert(" Bom dia ")
         break   
-        case (horario >= 12 && horario <= 17):
+        case (horaValue >= 12 && horaValue <= 17):
             alert(" Boa tarde ")
         break
-        case (horario >= 18 && horario <= 23):
+        case (horaValue >= 18 && horaValue <= 23):
             alert(" Boa noite ")
         break
-        case (horario > 23):
+        case (horaValue > 23):
             alert(" !!! Horario inexistente !!! ")
         break
     }

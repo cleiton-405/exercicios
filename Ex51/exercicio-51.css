@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(156, 155, 155);
+    text-align: center;
+}
+
+.table{
+    display: flex;
+    justify-content: center;
+}
+
+table{
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+thead{
+    background-color: #4CAF50;
+    color: rgb(0, 0, 0);
+}
+
+td{
+    border: 1px solid black;
+    background-color: coral;
+    padding: 5px;
+}

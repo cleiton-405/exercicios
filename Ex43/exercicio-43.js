@@ -1,30 +1,26 @@
+const output = document.getElementById("output")
+const nome = document.getElementById("nome")
+const idade = document.getElementById("idade")
+const profissao = document.getElementById("profissao")
 
-while(true){
-    let nome = prompt("Digite seu nome: ")
-        if(nome.length <= 3){
-            alert(" !!! Informe um nome válido !!! ")
-            continue
-        }
+function verificarIdade(){
+    const nomeValue = nome.value
+    const idadeValue = Number(idade.value)
+    const profissaoValue = profissao.value
 
-    let idade = parseInt(prompt("Digite sua idade: "))
-        if(idade <= 0 || idade >= 120){
-            alert(" !!! Informe uma idade válida !!! ")
-            continue
-        }
+    const pessoa = {
+        nome:nomeValue,
+        idade:idadeValue,
+        profissao:profissaoValue
+    }
 
-    let profissao = prompt("Digite sua profissao: ")
-        if(profissao.length <= 3){
-            alert(" !!! Informe uma profissão válida !!! ")
-            continue
-        }
+    if(pessoa.idade >= 18){
+        output.innerHTML = `Maior de idade <br>`
+    }else{
+        output.innerHTML = `Menor de idade <br>`
+    }
 
-    const pessoa = {nome, idade, profissao}
-
-    console.log(pessoa.nome)
-    console.log(pessoa.idade)
-    console.log(pessoa.profissao)
-
-    console.log(pessoa)
-
-    break
+    for(let prop in pessoa){
+        output.innerHTML += `${prop} - ${pessoa[prop]} <br>`
+    }
 }

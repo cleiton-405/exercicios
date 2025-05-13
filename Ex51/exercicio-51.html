@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/Ex01/style.css">
+    <link rel="stylesheet" href="exercicio-51.css">
 
     <title>Exercicio</title>
 
 </head>
 <body>
     
-    <h1>Lista de exercicios</h1>
+    <h1>Play the game</h1>
 
         <!--
     
@@ -29,6 +29,43 @@
         Saída: O resultado do jogo ("Jogador 1 venceu", "Jogador 2 venceu" ou "Empate").
     
         -->
+
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="3">Jogo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pedra</td>
+                        <td>Papel</td>
+                        <td>Tesoura</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br><br>
+
+        <label>
+            <input type="text" id="jogador1" placeholder="Digite...">
+        </label>
+
+        <br><br>
+
+        <label>
+            <input type="text" id="jogador2" placeholder="Digite...">
+        </label>
+        
+        <br><br>
+
+        <button onclick="pedraPapelTesoura()">Resultado</button>
+
+        <br><br>
+
+        <output id="output"></output>
 
         <script src="exercicio-51.js"></script>
 

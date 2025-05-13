@@ -1,48 +1,42 @@
-while(true) {
-    let jogador1 = prompt("(Jogador 1) Digite PEDRA, PAPEL ou TESOURA: ").toUpperCase()
-        if(jogador1 !== "PEDRA" && jogador1 !== "PAPEL" && jogador1 !== "TESOURA"){
-        alert("!!! Digite apenas PEDRA, PAPEL ou TESOURA !!!")
-        continue
+const output = document.getElementById("output")
+
+function pedraPapelTesoura(){
+    const jogador1Value = document.getElementById("jogador1").value.toUpperCase()
+    const jogador2Value = document.getElementById("jogador2").value.toUpperCase()
+
+    if(jogador1Value !== "PEDRA" && jogador1Value !== "PAPEL" && jogador1Value !== "TESOURA"){
+            alert("!!! Digite apenas PEDRA, PAPEL ou TESOURA !!!")
     }
 
-    let jogador2 = prompt("(Jogador 2) Digite PEDRA, PAPEL ou TESOURA: ").toUpperCase()
-        if(jogador2 !== "PEDRA" && jogador2 !== "PAPEL" && jogador2 !== "TESOURA"){
+    if(jogador2Value !== "PEDRA" && jogador2Value !== "PAPEL" && jogador2Value !== "TESOURA"){
             alert("!!! Digite apenas PEDRA, PAPEL ou TESOURA !!!")
-            continue
-        }
+    }
 
-    if(jogador1 === jogador2){
-        alert("Empate!")
+    if(jogador1Value === jogador2Value){
+        output.innerHTML = `Jogador 1 - ${jogador1Value} | Jogador 2 - ${jogador2Value} = EMPATE`
     }else{
-
-        switch(jogador1){
+        switch(jogador1Value){
             case "PEDRA":
-                if(jogador2 === "TESOURA"){
-                    alert("Jogador 1 venceu!")
+                if(jogador2Value === "TESOURA"){
+                    output.innerHTML = `Jogador 1 - ${jogador1Value} | Jogador 2 - ${jogador2Value} = Jogador 1 venceu`
                 }else{
-                    alert("Jogador 2 venceu!")
+                    output.innerHTML = ` Jogador 1 - ${jogador1Value} | Jogador 2 - ${jogador2Value} = Jogador 2 venceu`
                 }
             break
             case "PAPEL":
-                if(jogador2 === "PEDRA"){
-                    alert("Jogador 1 venceu!")
+                if(jogador2Value === "PEDRA"){
+                    output.innerHTML = `Jogador 1 - ${jogador1Value} | Jogador 2 - ${jogador2Value} = Jogador 1 venceu`
                 }else{
-                    alert("Jogador 2 venceu!")
+                    output.innerHTML = ` Jogador 1 - ${jogador1Value} | Jogador 2 - ${jogador2Value} = Jogador 2 venceu`
                 }
             break
             case "TESOURA":
-                if(jogador2 === "PAPEL"){
-                    alert("Jogador 1 venceu!")
+                if(jogador2Value === "PAPEL"){
+                    output.innerHTML = `Jogador 1 - ${jogador1Value} | Jogador 2 - ${jogador2Value} = Jogador 1 venceu`
                 }else{
-                    alert("Jogador 2 venceu!")
+                    output.innerHTML = ` Jogador 1 - ${jogador1Value} | Jogador 2 - ${jogador2Value} = Jogador 2 venceu`
                 }
             break
         }
     }
-
-    let continuar = prompt("Deseja jogar novamente? (sim/não)").toLowerCase()
-        if(continuar !== "sim"){
-            alert("Obrigado por jogar!")
-            break
-        }
 }

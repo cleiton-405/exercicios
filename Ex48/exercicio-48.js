@@ -1,44 +1,57 @@
-const carrinho = {
-    produtos:[
-        { nome: "Maça", quantidade: 20, preco: 5 },
-        { nome: "Banana", quantidade: 50, preco: 10 },
-        { nome: "Uva", quantidade: 30, preco: 20 }
-    ]
+const output = document.getElementById("output")
+
+let carrinho = {
+    produtos:[]
 }
 
-function adicionarProduto(carrinho, produto){
-    const produtoExistente = carrinho.produtos.find(p => p.nome === produto.nome)
+function adicionarProduto(){
+    const nomeValue = document.getElementById("nome").value
+    const qtdProdutoValue = Number(document.getElementById("qtdProduto").value)
+    const precoValue = Number(document.getElementById("preco").value)
+
+    const produtoExistente = carrinho.produtos.find(p => p.nome === nomeValue)
     
     if(produtoExistente){
-        produtoExistente.quantidade += produto.quantidade
+        produtoExistente.quantidade += qtdProdutoValue
+        produtoExistente.preco = precoValue
     }else{
-        carrinho.produtos.push(produto)
+        carrinho.produtos.push({
+            nome: nomeValue,
+            quantidade: qtdProdutoValue,
+            preco: precoValue
+        })
     }
+
+    alert(" !!! Produto adicionado !!! ")
+
 }
 
-function removerProduto(carrinho, nome){
-    const indice = carrinho.produtos.findIndex(p => p.nome === nome)
-    
+function removerProduto(){
+    const nomeValue = document.getElementById("nome").value
+
+    const indice = carrinho.produtos.findIndex(p => p.nome === nomeValue)
+
     if(indice !== -1){
         carrinho.produtos.splice(indice, 1)
     }else{
-        console.log("Produto não encontrado.")
+        alert(" !!! Produto não encontrado !!! ")
     }
+
 }
 
 function calcularTotal(carrinho){
     let total = 0
-    
+
     carrinho.produtos.forEach(produto => {total += produto.quantidade * produto.preco})
 
     return total
 }
 
-adicionarProduto(carrinho, {nome: "Pera", quantidade: 10, preco: 8})
-console.log(carrinho.produtos)
+function estoqueProdutos(){
 
-removerProduto(carrinho, "Banana")
-console.log(carrinho.produtos)
-
-const total = calcularTotal(carrinho)
-console.log("Total do carrinho:", total)
+    output.innerHTML = carrinho.produtos.map(produto => `
+        Nome: ${produto.nome} <br>
+        Quantidade: ${produto.quantidade} <br>
+        Preço: R$${produto.preco.toFixed(2)} <br>
+        <p>Total: R$${calcularTotal(carrinho).toFixed(2)}</p>`)
+}

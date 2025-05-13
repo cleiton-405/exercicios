@@ -1,35 +1,36 @@
-alert("Informe o primeiro funcionário")
+const output = document.getElementById("output")
 
-let nome1 = prompt("Digite seu nome: ")
-let cargo1 = prompt("Digite o seu cargo: ")
-let salario1 = parseFloat(prompt("Digite o seu salário: "))
+function informacoes(){
+    const nome1Value = document.getElementById("nome1").value
+    const cargo1Value = Number(document.getElementById("cargo1").value)
+    const salario1Value = Number(document.getElementById("salario1").value)
 
-alert("Informe o segundo funcionário")
+    const nome2Value = document.getElementById("nome2").value
+    const cargo2Value = Number(document.getElementById("cargo2").value)
+    const salario2Value = Number(document.getElementById("salario2").value)
 
-let nome2 = prompt("Digite seu nome: ")
-let cargo2 = prompt("Digite o seu cargo: ")
-let salario2 = parseFloat(prompt("Digite o seu salário: "))
+    const empresa = {
+        funcionarios:[
+            {nome: nome1Value, cargo: cargo1Value, salario: salario1Value},
+            {nome: nome2Value, cargo: cargo2Value, salario: salario2Value}
+        ]
+    }
 
-const empresa = {
-    funcionarios: [
-        { nome: nome1, cargo: cargo1, salario: salario1 },
-        { nome: nome2, cargo: cargo2, salario: salario2 }
-    ]
-}
+    function funcionarioComMaiorSalario(funcionarios){
+        let maiorSalario = 0
+        let nomeFuncionario = ''
 
-function funcionarioComMaiorSalario(funcionarios){
-    let maiorSalario = 0
-    let nomeFuncionario = ''
-
-    for (let i = 0; i < funcionarios.length; i++){
+    for(let i = 0; i < funcionarios.length; i++){
         if(funcionarios[i].salario > maiorSalario){
             maiorSalario = funcionarios[i].salario
             nomeFuncionario = funcionarios[i].nome
         }
     }
 
-    return nomeFuncionario
+    return {nome: nomeFuncionario, salario: maiorSalario}
 }
 
 let funcionarioMaiorSalario = funcionarioComMaiorSalario(empresa.funcionarios)
-    console.log("O fucnionário "+funcionarioMaiorSalario+" possui o maior salário")
+    output.innerHTML = `"O funcionário ${funcionarioMaiorSalario.nome} possui o maior salário. <br>
+    ${funcionarioMaiorSalario.salario}`
+}

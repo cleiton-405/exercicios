@@ -1,33 +1,37 @@
-const estoque = {
-    produto: "Produto Exemplo", // Nome do produto
-    quantidade: 100, // Quantidade inicial em estoque
-    preco: 50, // Preço por unidade do produto
-  
-    // Método para adicionar ao estoque
-    adicionarEstoque: function(quantidade){
-      estoque.quantidade += quantidade
-    },
-  
-    // Método para vender o produto
-    venderProduto: function(quantidade) {
-      if(quantidade <= estoque.quantidade){
-        estoque.quantidade -= quantidade
-        return estoque.preco * quantidade // Retorna o valor da venda
-      }else{
-        console.log("Quantidade insuficiente em estoque.")
-        return 0
-      }
+const output = document.getElementById("output")
+
+let estoque = {
+    produto: "",
+    quantidade: 0,
+    preco: 0,
+}
+
+function adicionarProduto(){
+    const produtoValue = document.getElementById("produto").value
+    const qtdValue = Number(document.getElementById("qtd").value)
+    const precoValue = Number(document.getElementById("preco").value)
+
+    estoque.produto = produtoValue
+    estoque.quantidade += qtdValue
+    estoque.preco = precoValue
+
+    output.innerHTML = ` !!! Produto "${produtoValue}" adicionado com sucesso! !!! `
+}
+
+function verificarEstoque(){
+    output.innerHTML = `Produto: ${estoque.produto} <br>
+    Quantidade em estoque: ${estoque.quantidade} <br>
+    Preço unitário: R$ ${estoque.preco.toFixed(2)}`
+}
+
+function venderProdutos(){
+    const qtdValue = Number(document.getElementById("qtd").value)
+
+    if(qtdValue <= estoque.quantidade){
+        estoque.quantidade -= qtdValue
+        const total = estoque.preco * qtdValue
+        output.innerHTML = ` ! Venda realizada com sucesso! Total: R$ ${total.toFixed(2)}`
+    }else{
+        output.innerHTML = ` !!! Quantidade insuficiente em estoque !!! `
     }
-  }
-  
-  estoque.adicionarEstoque(50) // Aumenta o estoque em 50 unidades
-
-  console.log(estoque.quantidade) // Exibe a nova quantidade em estoque
-  
-  const valorVenda = estoque.venderProduto(30) // Vende 30 unidades
-
-  console.log("Valor da venda: R$", valorVenda) // Exibe o valor da venda
-
-  console.log(estoque.quantidade) // Exibe a quantidade restante após a venda
-
-  
+}

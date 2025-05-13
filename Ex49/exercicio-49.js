@@ -1,9 +1,22 @@
-const array = [1,2,3,4,5]
+const output = document.getElementById("output")
 
-let soma = 0
+let array = []
 
-for(let i = 0; i < array.length; i++){
-    soma = soma + array[i]
+function adiciona(){
+    const numValue = Number(document.getElementById("num").value)
+
+    if(numValue == 0){
+        alert(" !!! Nenhum número adicionado !!! ")
+    }else{
+        array.push(numValue)
+        output.innerHTML = ` !!! Adicionado com sucesso !!! <br> ${array}`
+    }
 }
 
-console.log("Total: "+soma)
+function somar(){
+    let somarArray = 0
+
+    array.forEach(array => {somarArray += array})
+
+    output.innerHTML = `Soma dos números: ${somarArray}`
+}

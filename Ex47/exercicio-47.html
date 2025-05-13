@@ -11,7 +11,7 @@
 </head>
 <body>
     
-    <h1>Lista de exercicios</h1>
+    <h1>Produtos</h1>
 
         <!--
     
@@ -26,6 +26,34 @@
         Adicione um método adicionarEstoque(quantidade) que aumenta a quantidade do produto no estoque. Também crie um método venderProduto(quantidade) que diminui a quantidade do produto e retorna o valor da venda (preço * quantidade vendida).
     
         -->
+
+        <label>
+            <input type="text" id="produto" placeholder="Digite um produto...">
+        </label>
+
+        <br><br>
+
+        <label>
+            <input type="number" id="qtd" placeholder="Digite a quantidade...">
+        </label>
+
+        <br><br>
+
+        <label>
+            <input type="number" id="preco" placeholder="Digite um preço...">
+        </label>
+
+        <br><br>
+
+        <button onclick="adicionarProduto()">Adicionar</button>
+
+        <button onclick="verificarEstoque()">Estoque</button>
+
+        <button onclick="venderProdutos()">Vender</button>
+
+        <br><br>
+
+        <output id="output"></output>
 
         <script src="exercicio-47.js" ></script>
 

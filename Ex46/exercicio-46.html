@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <h1>Lista de exercicios</h1>
+    <h1>Livro</h1>
 
         <!--
     
@@ -26,6 +26,30 @@
         Adicione um método ao objeto livro chamado informacoes(), que retorna uma string formatada com o título, o autor e o ano de publicação. Exemplo de saída: "O livro [titulo] foi escrito por [autor] e publicado em [anoPublicacao]."
     
         -->
+
+        <label>
+            <input type="text" id="titulo" placeholder="Digite o título...">
+        </label>
+
+        <br><br>
+
+        <label>
+            <input type="text" id="autor" placeholder="Digite o autor...">
+        </label>
+
+        <br><br>
+
+        <label>
+            <input type="number" id="anopublicacao" placeholder="Digite o ano...">
+        </label>
+
+        <br><br>
+
+        <button onclick="informacoes()">Aperte</button>
+
+        <br><br>
+
+        <output id="output"></output>
 
         <script src="exercicio-46.js"></script>
     

@@ -1,14 +1,27 @@
+function informacoes(){
+    const nomeValue = document.getElementById("nome").value
+    const idadeValue = Number(document.getElementById("idade").value)
+    const notaValue = Number(document.getElementById("nota").value)
+    const cursoValue = document.getElementById("curso").value
+    const output = document.getElementById("output")
 
-let nome = prompt("Digite o seu nome: ")
-let idade = parseInt(prompt("Digite a sua idade: "))
-let nota = parseInt(prompt("Digite a sua nota: "))
+    const estudante ={
+        nome:nomeValue,
+        idade:idadeValue,
+        nota:notaValue
+    }
 
-let estudante = {nome, idade, nota}
+    for(let prop in estudante){
+        output.innerHTML += `${prop} - ${estudante[prop]} <br>`
+    }
 
-estudante.curso = prompt("Digite o seu curso: ")
+    estudante.curso = cursoValue
 
-delete estudante.nota
+    delete estudante.nota
 
-for(let prop in estudante){
-    console.log(estudante[prop])
+    output.innerHTML += " -------------------------- <br>"
+
+    for (let prop in estudante) {
+        output.innerHTML += `${prop} - ${estudante[prop]} <br>`
+    }
 }
