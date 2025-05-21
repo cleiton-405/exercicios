@@ -1,11 +1,19 @@
-const pessoas = [
-    {nome: "Carlos", idade: 30},
-    {nome: "Maria", idade: 25},
-    {nome: "José", idade: 40}
-]
+const output = document.getElementById("output")
 
-function ordenarPessoasPorIdade(pessoas){
-    return pessoas.sort((a, b) => a.idade - b.idade)
+const pessoas = []
+
+function adicionarPessoas(){
+    const nomeValue = document.getElementById("nome").value
+    const idadeValue = Number(document.getElementById("idade").value)
+
+    pessoas.push({nome: nomeValue, idade: idadeValue})
+
+    output.innerHTML = `${nomeValue} adicionada com sucesso!`
 }
 
-console.log(ordenarPessoasPorIdade(pessoas))
+function ordenarPorIdade(){
+    pessoas.sort((a, b) => a.idade - b.idade)
+
+    output.innerHTML = "Pessoas ordenadas por idade:<br>"
+    pessoas.forEach(pessoa => {output.innerHTML += `${pessoa.nome}, ${pessoa.idade} anos<br>`})
+}

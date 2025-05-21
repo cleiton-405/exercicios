@@ -1,46 +1,49 @@
-while(true){
+const output = document.getElementById("output")
 
-    let nome = prompt("Digite o seu nome: ")
-        if(nome.length <= 2){
-            alert("!!! Digite um nome com mais de 2 caracteres !!!")
-            continue
-        }
-    let idade = parseInt(prompt("Digite sua idade: "))
-        if(isNaN(idade)|| idade <= 0){
-            alert("!!! Digite apenas números inteiros válidos para idade !!!")
-            continue
-        }
-    let email = prompt("Digite o seu email: ")
-        if(email.length <= 2){
-            alert("!!! Digite um email válido !!!")
-            continue
-        }
+const pessoa = {
+    nome: "",
+    idade: 0,
+    email: "",
+    newemail: ""
+}
 
-    const pessoa = {nome: nome,idade: idade,email: email}
+function cumprimentar(){
+    const nomeValue = document.getElementById("nome").value
 
-    function cumprimentar(){
-        alert(" Olá, "+pessoa.nome)
-    }
+    pessoa.nome = nomeValue
 
-    function envelhecer(){
-        alert(" Você têm "+pessoa.idade+" anos.")
-    }
+    output.innerHTML = `Olá, meu nome é ${pessoa.nome}` 
+}
 
-    function atualizarEmail(){
-        pessoa.email = "joão@server.com"
-    }
+function mostrarIdade(){
+    const idadeValue = Number(document.getElementById("idade").value)
 
-    cumprimentar()
-    envelhecer()
-    atualizarEmail()
+    pessoa.idade = idadeValue
 
-    const pessoaInfo = document.getElementById("pessoaInfo")
+    output.innerHTML = `Você têm ${pessoa.idade} anos`
+}
 
-    pessoaInfo.innerHTML += "<p>Nome: "+pessoa.nome+"</p>"
+function atualizarEmail(){
+    const newemailValue = document.getElementById("newemail").value
 
-    pessoaInfo.innerHTML += "<p>Idade: "+pessoa.idade+"</p>"
+    pessoa.email = newemailValue
 
-    pessoaInfo.innerHTML += "<p>Email: "+pessoa.email+"</p>"
+    output.innerHTML = `Email atualizado: ${pessoa.email}`
+}
 
-    break
+function informacoes(){
+    const nomeValue = document.getElementById("nome").value
+    const idadeValue = Number(document.getElementById("idade").value)
+    const emailValue = document.getElementById("email").value
+    const newemailValue = document.getElementById("newemail").value
+
+    pessoa.nome = nomeValue
+    pessoa.idade = idadeValue
+    pessoa.email = emailValue
+    pessoa.newemail = newemailValue
+
+    output.innerHTML = `Nome: ${pessoa.nome} <br>
+    Idade: ${pessoa.idade} <br>
+    Email: ${pessoa.email} <br>
+    New Email: ${pessoa.newemail}`
 }

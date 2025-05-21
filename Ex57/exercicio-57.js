@@ -1,15 +1,25 @@
-let marca = prompt("Digite a marca do carro: ")
-let modelo = prompt("Digite o modelo do carro: ")
-let ano = parseInt(prompt("Digite o ano do carro: "))
+const output = document.getElementById("output")
 
 const carro = {
-    marca: marca,
-    modelo: modelo,
-    ano: ano
+    marca: "",
+    modelo: "",
+    ano: 0
 }
 
-function informacoesCarro(){
-    document.write(`A marca ${carro.marca}, o modelo ${carro.modelo} e o ano ${carro.ano}`)
-}
+function informacoes(){
+    const marcaValue = document.getElementById("marca").value
+    const modeloValue = document.getElementById("modelo").value
+    const anoValue = Number(document.getElementById("ano").value)
 
-informacoesCarro()
+    carro.marca = marcaValue
+    carro.modelo = modeloValue
+    carro.ano = anoValue
+
+    const linhas = []
+
+    for(let prop in carro){
+        linhas.push(`${prop} = ${carro[prop]}`)
+    }
+
+    output.innerHTML = linhas.join("<br>")
+}

@@ -1,24 +1,17 @@
 const array = []
-const n1Input = document.getElementById("n1")
-const resultado = document.getElementById("resultado")
-const maiorNumeroResultado = document.getElementById("maiorNumeroResultado")
+const output = document.getElementById("output")
 
 function adicionarArray(){
-    let valor = parseInt(n1Input.value)
+    const n1Value = Number(document.getElementById("n1").value)
 
-    if(!isNaN(valor)){
-        array.push(valor)
-        resultado.innerHTML = `Número ${valor} adicionado!`
-        n1Input.value = ""
+    array.push(n1Value)
 
-    }else{
-        resultado.innerHTML = "Por favor, insira um número válido."
-    }
+    output.innerHTML = `Número ${array} adicionado!`
 }
 
 function maiorNumero(array){
     if(array.length === 0){
-        return null
+        output.innerHTML = `Array vazia`
     }
 
     let maior = array[0]
@@ -35,5 +28,5 @@ function maiorNumero(array){
 function mostraMaiorNumero(){
     const maior = maiorNumero(array)
 
-    maiorNumeroResultado.innerHTML = "<p>Maior número: "+maior+"</p>"
+    output.innerHTML = "<p>Maior número: "+maior+"</p>"
 }

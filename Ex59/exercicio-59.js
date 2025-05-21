@@ -1,26 +1,43 @@
-let n1 = parseFloat(prompt("Digite o primeiro número: "))
-let n2 = parseFloat(prompt("Digite o segundo número: "))
+const output = document.getElementById("output")
 
-function soma(n1,n2){
-    return n1 + n2
+let resultado = 0
+
+function somar(){
+    const num1Value = Number(document.getElementById("num1").value)
+    const num2Value = Number(document.getElementById("num2").value)
+
+    resultado = num1Value + num2Value
+
+    output.innerHTML = `Soma: ${resultado}`
 }
 
-function subtrair(n1,n2){
-    return n1 - n2
+function subtrair(){
+    const num1Value = Number(document.getElementById("num1").value)
+    const num2Value = Number(document.getElementById("num2").value)
+
+    resultado = num1Value - num2Value
+
+    output.innerHTML = `Subtração: ${resultado}`
 }
 
-function multiplicar(n1,n2){
-    return n1 * n2
+function multiplicar(){
+    const num1Value = Number(document.getElementById("num1").value)
+    const num2Value = Number(document.getElementById("num2").value)
+
+    resultado = num1Value * num2Value
+
+    output.innerHTML = `Multiplicação: ${resultado}`
 }
 
-function dividir(n1,n2){
-    if(n2 === 0){
-        return 'Não é possível dividir por zero'
+function dividir(){
+    const num1Value = Number(document.getElementById("num1").value)
+    const num2Value = Number(document.getElementById("num2").value)
+
+    if(num2Value === 0){
+        output.innerHTML = 'Não é possível dividir por zero'
+    }else{
+        resultado = num1Value / num2Value
+
+        output.innerHTML = `Divisão: ${resultado}`
     }
-    return n1 / n2
-}   
-
-console.log(soma(n1,n2))
-console.log(subtrair(n1,n2))
-console.log(multiplicar(n1,n2))
-console.log(dividir(n1,n2))
+}

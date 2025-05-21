@@ -27,9 +27,43 @@
                 atualizarEmail(): que permite atualizar o email da pessoa.
         -->
 
-        <div id="pessoaInfo">
+        <label>
+            <input type="text" id="nome" placeholder="Digite seu nome...">
+        </label>
 
-        </div>
+        <br><br>
+
+        <label>
+            <input type="number" id="idade" placeholder="Digite sua idade...">
+        </label>
+
+        <br><br>
+
+        <label>
+            <input type="email" id="email" placeholder="Digite seu email...">
+        </label>
+
+        <br><br>
+
+        <button onclick="cumprimentar()">Cumprimentar</button>
+
+        <button onclick="mostrarIdade()">Mostrar idade</button>
+
+        <button onclick="atualizarEmail()">Atualizar email</button>
+
+        <br><br>
+
+        <label>
+            <input type="email" id="newemail" placeholder="Atualizar email...">
+        </label>
+
+        <br><br>
+
+        <button onclick="informacoes()">Informações</button>
+
+        <br><hr><br>
+
+        <output id="output"></output>
 
         <script src="exercicio-56.js"></script>
 

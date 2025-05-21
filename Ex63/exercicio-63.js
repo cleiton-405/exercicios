@@ -1,15 +1,12 @@
-const dia = document.getElementById("dia")
-const mes = document.getElementById("mes")
-const ano = document.getElementById("ano")
 const output = document.getElementById("output")
 
 function formatarData(){
-    let diaValue = parseInt(dia.value)
-    let mesValue = parseInt(mes.value)
-    let anoValue = parseInt(ano.value)
+    const diaValue = Number(document.getElementById("dia").value)
+    const mesValue = Number(document.getElementById("mes").value)
+    const anoValue = Number(document.getElementById("ano").value)
 
-    let diaFormatado = diaValue.toString().padStart(2, '0');
-    let mesFormatado = mesValue.toString().padStart(2, '0');
+    let diaFormatado = diaValue.toString().padStart(2, '0')
+    let mesFormatado = mesValue.toString().padStart(2, '0')
 
     output.innerHTML = `${diaFormatado}/${mesFormatado}/${anoValue}`
 }

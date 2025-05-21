@@ -1,16 +1,11 @@
-const n1 = document.getElementById("n1")
-const resultado = document.getElementById("resultado")
+const output = document.getElementById("output")
 
 function verificarPar(){
+    const n1Value = Number(document.getElementById("n1").value)
 
-    let n1Value = n1.value
-    n1Value = parseInt(n1Value)
-
-    resultado.innerHTML = ""
-
-    if(n1Value % 2 == 0){
-        resultado.innerHTML += `O número ${n1Value} é par.`
+    if(n1Value % 2 === 0){
+        output.innerHTML = `O número ${n1Value} é par.`
     }else{
-        resultado.innerHTML += `O número ${n1Value} é ímpar.`
+        output.innerHTML = `O número ${n1Value} é ímpar.`
     }
 }

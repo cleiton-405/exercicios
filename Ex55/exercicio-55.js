@@ -1,55 +1,21 @@
-while (true) {
+const output = document.getElementById("output")
 
-    alert("Para sair do programa, digite 0 em qualquer momento.")
+function compararIdades(){
+    const nome1Value = (document.getElementById("nome1").value)
+    const nome2Value = (document.getElementById("nome2").value)
+    const idade1Value = Number(document.getElementById("idade1").value)
+    const idade2Value = Number(document.getElementById("idade2").value)
 
-    let nome1 = prompt("Digite um nome: ")
-    if(nome1 === "0"){
-        alert("!!! Você saiu do programa !!!")
-        break
-    }
-    if(nome1.length <= 2){
-        alert("!!! Digite um nome com mais de 2 caracteres !!!")
-        continue
-    }
+    const pessoa1 = { nome1: nome1Value, idade1: idade1Value }
+    const pessoa2 = { nome2: nome2Value, idade2: idade2Value }
 
-    let idade1 = parseInt(prompt("Digite uma idade: "))
-    if(idade1 === 0){
-        alert("!!! Você saiu do programa !!!")
-        break
-    }
-    if(isNaN(idade1) || idade1 <= 0){
-        alert("!!! Digite apenas números inteiros válidos para idade !!!")
-        continue
+    if(pessoa1.idade1 == pessoa2.idade2){
+        return output.innerHTML = `Ambas têm a mesma idade`
     }
 
-    let nome2 = prompt("Digite um nome: ")
-    if(nome2 === "0"){
-        alert("!!! Você saiu do programa !!!")
-        break
+    if(pessoa1.idade1 > pessoa2.idade2){
+        output.innerHTML = `${pessoa1.nome1} é a pessoa mais velha com ${pessoa1.idade1}`
+    }else{
+        output.innerHTML = `${pessoa2.nome2} é a pessoa mais velha com ${pessoa2.idade2}`
     }
-    if(nome2.length <= 2){
-        alert("!!! Digite um nome com mais de 2 caracteres !!!")
-        continue
-    }
-
-    let idade2 = parseInt(prompt("Digite uma idade: "))
-    if(idade2 === 0){
-        alert("!!! Você saiu do programa !!!")
-        break
-    }
-    if(isNaN(idade2) || idade2 <= 0){
-        alert("!!! Digite apenas números inteiros válidos para idade !!!")
-        continue
-    }
-
-    const pessoa1 = { nome: nome1, idade: idade1 }
-    const pessoa2 = { nome: nome2, idade: idade2 }
-
-    const pessoas = document.getElementById("pessoas")
-
-    pessoas.innerHTML += "<p>Nome: "+pessoa1.nome+""+" Idade: "+pessoa1.idade+"</p>"
-
-    pessoas.innerHTML += "<p>Nome: "+pessoa2.nome+""+" Idade: "+pessoa2.idade+"</p>"
-
-    break
 }

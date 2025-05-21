@@ -1,15 +1,18 @@
-const array = {
-    numeros:[1,2,3]
+const output = document.getElementById("output")
+
+const numeros = []
+
+function adicionaArray(){
+    const numValue = Number(document.getElementById("num").value)
+
+    numeros.push(numValue)
+
+    output.innerHTML = ` !!! ${numValue} adicionado com sucesso !!! `
+
 }
 
-const arrayInfo = document.getElementById("arrayInfo")
-
-arrayInfo.innerHTML += "<p>Array: "+array.numeros+"</p>"
-
-    let soma = 0
-
-    for(let i = 0; i < array.numeros.length; i++){
-        soma += array.numeros[i]
-    }
-
-arrayInfo.innerHTML += "<p>Soma: "+soma+"</p>"
+function somaArray(){
+    const soma = numeros.reduce((acc, num) => acc + num, 0)
+    
+    return output.innerHTML = `Soma: ${soma}`
+}

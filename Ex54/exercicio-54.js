@@ -1,15 +1,41 @@
-let titular = prompt("Digite o nome do titular: ")
-let saldo = parseFloat(prompt("Digite o seu saldo: "))
-let deposito = parseFloat(prompt("Digite um valor para depósito: "))
+const output = document.getElementById("output")
 
-const contaBancaria = {titular,saldo, deposito}
+const contaBancaria = {
+    nome: "",
+    saldo: 0
+}
 
-const info = document.getElementById("info")
+function depositar(){
+    const valorValue = Number(document.getElementById("valor").value)
+    const titularValue = document.getElementById("titular").value
 
-info.innerHTML += "<p>Nome do titular: "+contaBancaria.titular+"</p>"
+    contaBancaria.nome = titularValue
+    contaBancaria.saldo += valorValue
 
-info.innerHTML += "<p>Saldo: "+contaBancaria.saldo+"</p>"
+    output.innerHTML = ` !!! Depósito adicionado com sucesso: R$ ${valorValue.toFixed(2)} !!! `
+}
 
-contaBancaria.deposito += contaBancaria.saldo
+function saque(){
+    const saqueDinheiroValue = Number(document.getElementById("saquedinheiro").value)
 
-info.innerHTML += "<p>Novo saldo com depósito: "+contaBancaria.deposito+"</p>"
+    if(saqueDinheiroValue <= 0){
+        output.innerHTML = `!!! Valor de saque inválido !!!`
+        return
+    }
+
+    if(saqueDinheiroValue > contaBancaria.saldo){
+        output.innerHTML = `!!! Saldo insuficiente para saque !!!`
+    }else{
+        contaBancaria.saldo -= saqueDinheiroValue
+        output.innerHTML = `!!! Saque realizado com sucesso: R$ ${saqueDinheiroValue.toFixed(2)} !!!`
+    }
+}
+
+function saldo(){
+    if(contaBancaria.saldo === 0){
+        output.innerHTML = `!!! Nenhum dinheiro depositado !!!`
+    }else{
+        output.innerHTML = `Nome: ${contaBancaria.nome} <br> 
+        Saldo: R$ ${contaBancaria.saldo.toFixed(2)}`
+    }
+}

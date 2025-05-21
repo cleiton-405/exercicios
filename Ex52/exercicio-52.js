@@ -1,26 +1,28 @@
-let nome = prompt("Digite o seu nome: ")
-let nota1 = parseFloat(prompt("Digite a nota 1: "))
-let nota2 = parseFloat(prompt("Digite a nota 2: "))
+const output = document.getElementById("output")
 
-const aluno = {nome,nota1,nota2}
+const aluno = {
+    nome: "",
+    notas: []
+}
 
-const informacoesAluno = document.getElementById("informacoesAluno")
+function adicionarNotas(){
+    const notaValue = Number(document.getElementById("nota").value)
+    const nomeValue = document.getElementById("nome").value
 
-informacoesAluno.innerHTML = "<h2>Aluno: "+aluno.nome+"</h2>"
-informacoesAluno.innerHTML += "<p>Notas: </p>"
-informacoesAluno.innerHTML += "<ul>"
+    aluno.nome = nomeValue
+    aluno.notas.push(notaValue)
 
-    informacoesAluno.innerHTML += "<li>"+aluno.nota1+"</li>"
-    informacoesAluno.innerHTML += "<li>"+aluno.nota2+"</li>"
+    output.innerHTML = `!!! Nota adicionada com sucesso ${notaValue} !!!`
+}
 
-    let media = 0
+function calcularMedia(notas){
+    if(notas.length === 0)
+        return 0
+    const soma = notas.reduce((acc, nota) => acc + nota, 0)
+        return soma / 2
+}
 
-    media = (aluno.nota1 + aluno.nota2) / 2
-
-informacoesAluno.innerHTML += "</ul>"
-
-informacoesAluno.innerHTML += "<p> Média: "+media.toFixed(2)+"</p>"
-
-    let aprovado = (media >= 7) ? "Sim" : "Não"
-
-informacoesAluno.innerHTML += "Aprovado? " + aprovado    
+function informacoes(){
+    const media = calcularMedia(aluno.notas)
+    output.innerHTML = `Nome: ${aluno.nome} <br> Média do aluno: ${media.toFixed(2)}`
+}

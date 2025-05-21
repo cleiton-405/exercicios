@@ -1,9 +1,9 @@
-let text = prompt("Digite uma frase ou palavra: ")
+const output = document.getElementById("output")
 
-function mostrarTotalPalavras(text){
-    const palavras = text.split(/\s+/)
+function mostrarTotalPalavras(){
+    const palavrasValue = document.getElementById("palavras").value.trim()
 
-    return palavras.length
+    const contador = palavrasValue.split(/\s+/).length
+
+    output.innerHTML = `Total: ${contador}`
 }
-
-console.log("Total: "+mostrarTotalPalavras(text))
