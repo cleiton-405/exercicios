@@ -1,10 +1,25 @@
-const jsonInvalido = '{"nome": "João", idade: 30}' //Entrada de dados
+const output = document.getElementById("output")
 
-try{ //Try para tentar uma resposta
-  const dados = JSON.parse(jsonInvalido) //Validação
+const jsonInvalido = {
+  nome: "",
+  idade: 0
+}
 
-  console.log("JSON válido:", dados) //Resultado
+function validar(){
+  try{
+    const nomeValue = document.getElementById("nome").value
+    const idadeValue = Number(document.getElementById("idade").value)
 
-}catch(erro){ //Catch mensagem de erro, caso tenha um erro
-  console.log("Erro ao fazer o parse do JSON:", erro.message) //Mensagem de erro
+      if(jsonInvalido.idade <= 0){
+        throw Error("dados inválidos ou nome ou idade inválida")
+      }
+     
+    jsonInvalido.nome = nomeValue
+    jsonInvalido.idade = idadeValue  
+
+    output.innerHTML = `JSON válido: nome = ${jsonInvalido.nome}, idade = ${jsonInvalido.idade}`
+
+  }catch(erro){
+    console.error("Erro:", erro.message)
+  }
 }

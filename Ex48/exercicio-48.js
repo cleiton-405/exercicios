@@ -5,7 +5,7 @@ let carrinho = {
 }
 
 function adicionarProduto(){
-    const nomeValue = document.getElementById("nome").value
+    const nomeValue = document.getElementById("nome").value.toLowerCase()
     const qtdProdutoValue = Number(document.getElementById("qtdProduto").value)
     const precoValue = Number(document.getElementById("preco").value)
 
@@ -27,7 +27,7 @@ function adicionarProduto(){
 }
 
 function removerProduto(){
-    const nomeValue = document.getElementById("nome").value
+    const nomeValue = document.getElementById("nome").value.toLowerCase()
 
     const indice = carrinho.produtos.findIndex(p => p.nome === nomeValue)
 
