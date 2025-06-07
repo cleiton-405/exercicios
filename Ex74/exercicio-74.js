@@ -19,7 +19,7 @@ function adicionarProdutos(){
 function calcularTotalProdutos(){
     let total = 0
 
-    total = total + listaProdutos.length
+    total += listaProdutos.length
 
     alert(`O total dos produtos é R$ ${total}`)
 }
