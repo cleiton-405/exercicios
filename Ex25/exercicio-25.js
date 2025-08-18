@@ -1,17 +1,18 @@
 const output = document.getElementById("output")
-const codigo = document.getElementById("codigo")
-const qtd = document.getElementById("qtd")
 
-let total = 0
+let total = []
 
-function adicionarProduto(){
+const adicionarProduto = () =>{
+    const codigo = document.getElementById("codigo")
+    const qtd = document.getElementById("qtd")
+
     const codigoValue = Number(codigo.value)
     const qtdValue = Number(qtd.value)
 
     let preco = 0
     let nomeProduto = ""
 
-    switch (codigoValue) {
+    switch (codigoValue){
         case 100:
             preco = 1.20
             nomeProduto = "Cachorro Quente"
@@ -42,11 +43,31 @@ function adicionarProduto(){
     }
 
         let totalProdutos = preco * qtdValue
-        total += totalProdutos
+        total.push(totalProdutos)
 
-        output.innerHTML = `${nomeProduto} adicionado com sucesso (R$ ${totalProdutos})`
+        const totalArray = total.reduce((acc, val) => acc + val, 0)
+
+        output.innerHTML = `${nomeProduto} adicionado com sucesso (R$ ${totalArray})`
+
+        codigo.value = ""
+        qtd.value = ""
 }
 
-function totalPedidos(){
-    return output.innerHTML = `Total do pedido: R$ ${total.toFixed(2)}`
+const totalPedidos = () =>{
+    const totalArray = total.reduce((acc, val) => acc + val, 0)
+
+    if(totalArray === 0){
+        return output.innerHTML = `!!! Carrinho vazio !!!`
+    }else{
+        return output.innerHTML = `Total do pedido: R$ ${totalArray}`
+    }
+}
+
+const resetPedidos = () =>{
+    total = 0
+    
+    codigo.value = ""
+    qtd.value = ""
+
+    return output.innerHTML = `!!! Esvaziou o carrinho !!!`
 }

@@ -1,6 +1,6 @@
 const output = document.getElementById("output")
 
-function loop(){
+const loop = () =>{
     for(let num = 0;num <= 100; num++){
         output.innerHTML += `${num}<br>`
     }

@@ -1,27 +1,23 @@
 const output = document.getElementById("output")
-const n1 = document.getElementById("n1")
-const n2 = document.getElementById("n2")
-const n3 = document.getElementById("n3")
 
 const array = []
 
-function arrayDigitada(){
-    const n1Value = Number(n1.value)
-    const n2Value = Number(n2.value)
-    const n3Value = Number(n3.value)
+const arrayDigitada = () =>{
+    const n1Value = Number(document.getElementById("n1").value)
+    const n2Value = Number(document.getElementById("n2").value)
+    const n3Value = Number(document.getElementById("n3").value)
 
-    array.push(n1Value, n2Value, n3Value)
+    array.length = 0 // Limpa o array
 
-    output.innerHTML = `Lista normal: ${array.join("-")}`
+    array.push(n1Value, n2Value, n3Value) // Adiciona no array
 
+    output.innerHTML = `Lista normal: ${array.join("-")}` 
+    // Mostrando no HTML usando .join()
 }
 
-function inverterArray(){
-    const n1Value = Number(n1.value)
-    const n2Value = Number(n2.value)
-    const n3Value = Number(n3.value)
-
-    array.reverse(n1Value, n2Value, n3Value)
+const inverterArray = () =>{
+    array.reverse() // Invertando a array
 
     output.innerHTML = `Lista invertida: ${array.join("-")}`
+    // Mostrando no HTML usando .join()
 }

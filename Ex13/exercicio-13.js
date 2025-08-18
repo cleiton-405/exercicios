@@ -1,24 +1,26 @@
 const output = document.getElementById("output")
-const titulo = document.getElementById("titulo")
-const autor = document.getElementById("autor")
-const numpaginas = document.getElementById("numpaginas")
+class Livro{
 
-const livro = {}
-
-function mostrarObjeto(){
-    const tituloValue = titulo.value
-    const autorValue = autor.value
-    const numpaginasValue = Number(numpaginas.value)
-
-    const livro = {
-        titulo: tituloValue,
-        autor: autorValue,
-        numpaginas: numpaginasValue
+    constructor(titulo, autor, numpaginas){
+        this.titulo = titulo
+        this.autor = autor
+        this.numpaginas = numpaginas
     }
 
-    for (let itens in livro) {
-        output.innerHTML += `<li>${itens}: ${livro[itens]}</li>`
-    } // Outra maneira de mostrar o objeto usando um loop e mostrando em uma lista 
+}
 
-    // output.innerHTML = `Objeto: ${JSON.stringify(livro)}`
+const mostrarObjeto = () =>{
+    const pessoa = new Livro()
+
+    pessoa.titulo = document.getElementById("titulo").value
+    pessoa.autor = document.getElementById("autor").value
+    pessoa.numpaginas = Number(document.getElementById("numpaginas").value)
+
+    output.innerHTML = `
+    <ul style="text-align: left;">
+        <li>${pessoa.titulo}</li>
+        <li>${pessoa.autor}</li>
+        <li>${pessoa.numpaginas}</li>
+    </ul>
+    `
 }

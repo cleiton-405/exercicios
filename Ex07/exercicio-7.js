@@ -1,6 +1,6 @@
 const output = document.getElementById("output")
 
-function impares(){
+const impares = () =>{
     let num = 0
 
     for(num = 0;num <= 30; num++){

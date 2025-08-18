@@ -1,22 +1,22 @@
 const output = document.getElementById("output")
-const n1 = document.getElementById("n1")
-let numeros = []
+let numbers = []
 
-//USANDO UMA FUNÇÃO E SORT PARA ORDENAR OS NÚMEROS
+//USANDO UMA FUNÇÃO ARROW E SORT PARA ORDENAR OS NÚMEROS
 
-function ordemCrescente(){
-    const n1Value = Number(n1.value)
+const ordemCrescente = () =>{
+    const n1 = Number(document.getElementById("n1").value)
 
-    if(isNaN(n1Value)){
+    if(isNaN(n1)){
         alert("Por favor, insira um número válido.")
+        return
     }
 
-    numeros.push(n1Value) // Adiciona o número ao array
+    numbers.push(n1) // Adiciona o número ao array
 
-    // Ordena o array em ordem crescente
-    numeros.sort(function (a, b) {
+    // Ordena o array em ordem crescente, usando método sort
+    numbers.sort((a, b) =>{
         return a - b
     })
 
-    output.innerHTML = `Ordem dos números: ${numeros}`
+    output.innerHTML = `Ordem dos números: ${numbers}`
 }

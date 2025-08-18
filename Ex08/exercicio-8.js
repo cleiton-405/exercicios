@@ -1,28 +1,25 @@
 const output = document.getElementById("output")
-const n1 = document.getElementById("n1")
-const n2 = document.getElementById("n2")
 
-function maiorNumeroEmenorNumero(){
+const maiorNumeroEmenorNumero = () =>{
+    const n1 = Number(document.getElementById("n1").value)
+    const n2 = Number(document.getElementById("n2").value)
 
-    const n1Value = Number(n1.value)
-    const n2Value = Number(n2.value)
-
-    if(n1Value === 0 && n2Value === 0){
+    if(n1 === 0 && n2 === 0){
         output.innerHTML = `!!! Ambos os números são zeros !!!`
-    }else if(n1Value >= 0 && n2Value >= 0){
-        if(n1Value > n2Value){
-            output.innerHTML = `Maior número: ${n1Value}<br>Menor número: ${n2Value}`
-        }else if(n2Value > n1Value){
-            output.innerHTML = `Maior número: ${n2Value}<br>Menor número: ${n1Value}`
+    }else if(n1 >= 0 && n2 >= 0){
+        if(n1 > n2){
+            output.innerHTML = `Maior número: ${n1}<br>Menor número: ${n2}`
+        }else if(n2 > n1){
+            output.innerHTML = `Maior número: ${n2}<br>Menor número: ${n1}`
         }else{
-            output.innerHTML = `Os dois números são iguais: ${n1Value}`
+            output.innerHTML = `Os dois números são iguais: ${n1}`
         }
     }
 }
 
-function soma(){
-    const n1Value = Number(n1.value)
-    const n2Value = Number(n2.value)
+const soma = () =>{
+    const n1 = Number(document.getElementById("n1").value)
+    const n2 = Number(document.getElementById("n2").value)
     
-    output.innerHTML = `Soma dos números: ${n1Value+n2Value}`
+    output.innerHTML = `Soma dos números: ${n1+n2}`
 }

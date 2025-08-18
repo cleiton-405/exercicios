@@ -1,21 +1,19 @@
 const output = document.getElementById("output")
-const senha = document.getElementById("senha")
-const nome = document.getElementById("nome")
 
-function validarNomeESenha(){
+const validarNomeESenha = () =>{
     try{
-        const nomeValue = nome.value.toLowerCase()
-        const senhaValue = senha.value.toLowerCase()
+        const senha = document.getElementById("senha").value.toLowerCase()
+        const nome = document.getElementById("nome").value.toLowerCase()
 
-        if(nomeValue == senhaValue){
+        if(nome == senha){
             alert("!!! Nome e senha iguais !!!")   
         }
 
-        if(nomeValue !== senhaValue){
+        if(nome !== senha){
             alert("!!! Tudo certo !!!")   
         }
 
-        output.innerHTML = `User: ${nomeValue} --- Password: ${senhaValue}`
+        output.innerHTML = `User: ${nome} --- Password: ${senha}`
     }catch(error){
         throw Error ("Erro"+error.message)
     }

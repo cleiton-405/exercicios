@@ -1,9 +1,43 @@
 const output = document.getElementById("output")
-const n1 = document.getElementById("n1")
-const n2 = document.getElementById("n2")
-const n3 = document.getElementById("n3")
+let arr = []
 
-function ordemCrescente(){
+const add = () =>{
+    const n1 = Number(document.getElementById("n1").value)
+
+    if(arr.length < 5){
+        arr.push(n1)
+        alert(`Número (${n1}) adicionado com sucesso`)
+    }
+
+    if(arr.length === 5){
+        alert(" !!! Não precisa de mais números !!! ")
+    }
+}
+
+const bubbleSort = () =>{
+    let n = arr.length
+
+    // Percorre todos os elementos do array
+    for (let i = 0; i < n; i++){
+        // Últimos i elementos já estão no lugar
+        for (let j = 0; j < n - i - 1; j++){
+            // Troca se o elemento atual for maior que o próximo
+            if (arr[j] > arr[j + 1]){
+                // Troca os elementos
+                let temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+            }
+        }
+    }
+
+    output.innerHTML = `Array ordenado: ${arr.join(", ")}`
+
+}
+
+/*
+Outra maneira de fazer
+
     let n1Value = Number(n1.value)
     let n2Value = Number(n2.value)
     let n3Value = Number(n3.value)
@@ -43,3 +77,5 @@ function ordemCrescente(){
 
     output.innerHTML = `Números em ordem crescente: ${menor} - ${meio} - ${maior}`
 }
+
+*/
